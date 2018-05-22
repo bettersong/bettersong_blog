@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>作品展示</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<style>
+html{height:100%}
+body{
+	margin:0;
+	height:100%;
+	background-color:#f7e5bf;
+	}
+ul{
+	display:flex;
+	justify-content:space-around;
+	list-style:none;
+	}
+ul li{
+	width:320px;
+	height:60px;
+	border:2px #FFF double;
+	background-color:#00a5c5;
+	border-radius:50px;
+	box-shadow:1px 0 5px #eb6e34; 
+	}
+ul li p{
+	text-align:center;
+	line-height:0;
+	border-bottom:3px;
+	color:#FFF;
+	text-shadow:1px 0 6px #fff;
+	font-weight:900;
+	font-size:40px;
+	}
+.box{
+	display:flex;/*开启弹性盒模型*/
+	flex-wrap:wrap;/*能够提行*/
+	justify-content:space-between;/*空白均分*/
+	width:1300px;
+	margin:30px auto;
+	}
+.box .item{	
+    position:relative;
+	width:400px;
+	height:300px;
+	margin-bottom:30px;
+	border-radius:10px;
+	box-shadow:0 0 9px black;/*盒子阴影：水平偏移，竖直偏移 放大 颜色*/
+	}
+.box .item img{
+	position:absolute;
+	width:400px;
+	height:300px;
+	border-radius:10px;
+	z-index:1;
+	transition:.6s;
+	}
+.box .item:hover img{
+	transform:scale(0.4);   /*变化:缩放*/
+	}
+.box .item .backbox{
+	position:absolute;
+	top:0;
+	width:400px;
+	height:300px;
+	background-color:#2c3f52;
+	border-radius:10px;
+	z-index:-1;
+	transform:scale(0.4);
+	transition:.6s;
+	}
+.box .item:hover .backbox{
+	transform:scale(1);
+	}
+.box .item .backbox h3{
+	font-size:30px;
+	color:#CCC;
+	}
+</style>
+</head>
+<body>
+<ul>
+    <li><p>在学中启迪智慧</p></li>
+    <li><p>在玩中分享快乐</p></li>
+</ul>
+<div class="box">
+     <div class="item">
+     <img src="images/mmexport1508039818516.jpg" />
+     <div class="backbox">
+     <h3>开心橙鱼</h3>
+     </div>
+     </div>
+     <div class="item">
+     <img src="images/mmexport1508155385999.jpg" />
+     <div class="backbox"><h3>巧克力饼干凳</h3></div>
+     </div>
+     <div class="item">
+     <img src="images/mmexport1508155398365.jpg" />
+     <div class="backbox"><h3>英伦主题</h3></div>
+     </div>
+     <div class="item">
+     <img src="images/４３５４３５３ (4).jpg" />
+     <div class="backbox"><h3>海洋主题</h3></div>
+     </div>
+     <div class="item">
+     <img src="images/230.jpg" />
+     <div class="backbox"><h3>花仙子鱼池</h3></div>
+     </div>
+     <div class="item">
+     <img src="images/701.jpg" />
+     <div class="backbox"><h3>长颈鹿凳</h3></div>
+     </div>
+</div>
+</body>
+</html>

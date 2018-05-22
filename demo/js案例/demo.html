@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>demo</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+        }
+    </style>
+</head>
+<body>
+      <!-- <canvas id="myCanvas" width="600" height="500" style="margin-top:10px;margin-left:350px;border:1px solid #ccc;"></canvas> -->
+
+   <script>
+       //条件表达式
+       // var cj=90;
+       // var pj=(cj>60) ? "恭喜您，考核通过！" : "很遗憾，考核未通过";
+       // alert(pj);
+
+       //for循环
+       // for(i=0;i<5;i++)
+       // {
+       //  document.write(i+"</br>");
+       // }
+
+       // 九九乘法表
+       // for(i=1;i<=9;i++){
+       // for(j=1;j<=i;j++){
+       //      document.write(j+"x"+i+"="+i*j+"&nbsp&nbsp&nbsp");
+       //  }
+       //  document.write("</br>");
+       // }
+
+       //1-50中3的倍数
+    //    for(i=1;i<=50;i++)
+    //    {
+    //     if(i%3==0){
+    //     document.write(i+"</br>");
+    // }
+    //    }
+
+    //求月份的天数
+    // var n=5;
+    //     switch(n){
+    //     case 1:
+    //     case 3:
+    //     case 5:
+    //     case 7:
+    //     case 8:
+    //     case 10:
+    //     case 12:
+    //     alert(n+"月有"+31+"天")
+    //     break;
+    //     case 4:
+    //     case 6:
+    //     case 9:
+    //     case 11:
+    //     alert(n+"月有"+30+"天")
+    //     break;
+    //     case 2:
+    //     alert(n+"月有"+"28或29"+"天")
+    //     break;
+    // }
+
+
+    //canvas渐变
+    // function draw(){
+    //     var c=document.getElementById("myCanvas");
+    //     var cxt=c.getContext("2d");
+    //     for(var i=0;i<19;i++){
+    //        for(var j=0;j<23;j++){
+    //         cxt.fillStyle="rgb(240,"+Math.floor(255-25*i)+','+Math.floor(255-25*j)+")";
+    //         cxt.beginPath();
+    //         cxt.arc(25+j*25,25+i*25,10,0,Math.PI*2,true);
+    //         cxt.closePath();
+    //         cxt.fill();
+    //       }
+      // }
+   // }
+   </script>
+   <!-- <input type="button" onclick="draw()" value="渐变"> -->
+   <!-- json -->
+   <p>
+       Name: <span id="jsname"></span><br/>
+       Age: <span id="jsage"></span><br/>
+       Adress:<span id="jsadress"></span><br/>
+       phone:<span id="jsphone"></span>
+   </p>
+   <script>
+       var JSONObject={
+        "name": "&nbsp;宋瑶",
+        "age":"20",
+        "adress": "&nbsp;江西省高安市",
+        "phone": "&nbsp;18720639195"
+       }
+       document.getElementById("jsname").innerHTML=JSONObject.name;
+       document.getElementById("jsage").innerHTML=JSONObject.age;
+       document.getElementById("jsadress").innerHTML=JSONObject.adress;
+       document.getElementById("jsphone").innerHTML=JSONObject.phone;
+   </script>
+</body>
+</html>

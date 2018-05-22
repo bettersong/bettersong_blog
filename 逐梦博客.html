@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>逐梦博客--web前端技术博客</title>
+    <meta name="keywords" content="逐梦,逐梦博客,个人博客,前端博客">
+    <meta name="description" content="">
+    <link type="text/css" rel="stylesheet" href="css/boke.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+</head>
+<body>
+<!--头部 -->
+<div class="heade">
+<div class="header" id="header">
+            <marquee direction=left scrollamount=3 onmouseover="this.stop()" onmouseout="this.start()">
+      <strong>最新公告:</strong><span style="color:#00F"><a name="key">欢迎光临逐梦博客！</a></span>
+      </marquee>
+            <div class="head">
+            <div class="logo">
+                <img src="images/logo.png"/ width="280px" height="170px">
+            </div>
+                <div class="h_text">
+                    <span class="meng">梦</span>
+                    <span class="xiang">想</span>
+                    <span class="text_t" id="txt">有了梦想，我们的心有了飞翔；</span>
+                    <span class="text_b">有了飞翔，我们的梦想不再遥远。。。。。。</span>
+                </div>
+            </div>
+        </div>
+<!-- 导航栏-->
+<header class="mod-header">
+    <div class="mod-header__progress"></div>
+    <div class="mod-header__wrap">
+        <div class="js_menu mod-header__nav">
+            <ul id="menu-nav" class="menu"><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19"><a href="">首页</a></li>
+                <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="">前端学习</a></li>
+                <li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="">心情小镇</a></li>
+                <li id="menu-item-2813" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2813"><a href="#link">作品案例</a></li>
+                <li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="">关于我</a></li>
+                <li id="menu-item-1016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1016"><a href="追踪时光.html" target="_new">追踪时光</a></li>
+                <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="">给我留言</a></li>
+            </ul>
+        </div>
+        </div>
+    <div class="logsearch">
+<form id="searchform" name="searchform" method="get" action="" target="">
+    <input type="text" name="s" id="bdcsMain" class="search" value="请输入搜索关键字"/>
+    <input type="submit" class="search_btn" value="搜索"/>
+</form>
+        </div>
+        <div id="play" class="play"><p id="before"></p><img src="images/音乐.png"/><audio src="music/岑宁儿 - 追光者.mp3" id="music"></audio></div>
+</header>
+</div>
+<canvas id="bubble"></canvas>
+<div id="main">
+    <div class="nav">
+        <div class="slider-outer" id="j_silder_outer">
+    <div class="img-item">
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+    </div>
+    <div class="img-item">
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+    </div>
+    <div class="img-item">
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+    </div>
+    <div class="img-item">
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+    </div>
+    <div class="img-item">
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+    </div>
+    <div class="btns" data-num="0">
+        <div class="prev"><</div>
+        <div class="next">></div>
+    </div>
+</div>
+        <div class="blackboard"><img src="images/blackboard.png" width="400px" height="300px"></div>
+    </div>
+    <div class="center">
+        <div class="news" id="tab1_content" style="display: block">
+            <div class="top">
+                <p><span style="color:red">推荐</span>文章 New Blog</p>
+            </div>
+            <div class="mid">
+              <div class="ali-img"><img src="images/8.jpg" width="260px" height="160px"></div>
+              <div class="ali-text">
+                  <h3>看别人的世界，品自己的人生</h3>
+                  <div class="ali-con">
+                      <a  target="_new">当你的才华还撑不起你的野心的时候， 你就应该静下心来学习； 当你的能力还驾驭不了你的目标时， 就应该沉下心来历练； 梦想，不是浮躁，而是沉淀和积累， 只有拼出来的美丽，没有等出来的辉煌； 机会，永远是留给最渴望的那个人， 学会与内心深处的你对话，问问自己， 想要怎样的人生，静心学习，耐心沉淀， 送给...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2018-04-20</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;2360次浏览</a>
+                      </span>
+                      <a href="http://tech.163.com/18/0420/11/DFR4S7VL00098IEO.html#f=www" title="详细阅读：阿里巴巴全资收购中天微 自主研发打造“中国芯”" class="mu-m4" target="_new">阅读全文</a>
+                  </div>
+              </div>
+            </div>
+            <div class="bottom">
+                <div class="dream-img"><img src="images/dream.jpg" width="260px" height="160px"/></div>
+                <div class="ali-text">
+                    <h3>新的一年,继续在前端这条路上前行</h3>
+                    <div class="ali-con">
+                      <a target="_new">彼时年少，不知前路何谓艰苦，于是对未来充满热情，希望，而时间如白驹过隙，转眼间已经步入了灵魂，也渐渐的适应了这样的生活。但是以前的梦想啊渐渐的偏离了我的轨道，感慨岁月如刀，削平了我们的棱角。在茫茫人海中不卑不亢，小心翼翼的前行，再也不敢平淡挫折态度...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2018-03-06</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;3680次浏览</a>
+                      </span>
+                      <a class="mu-m4" target="_new">阅读全文</a>
+                  </div>
+                </div>
+            </div>
+            <div class="last">
+              <div class="ali-img"><img src="images/mp3.jpeg" width="260px" height="160px"></div>
+              <div class="ali-text">
+                  <h3>手机移动端web资源整合</h3>
+                  <div class="ali-con">
+                      <a target="_new">做移动端开发，也会存在各种兼容问题，我做的是微信网站开发，也是遇到不少兼容问题，用安卓测试的正常的页面，在ios下，会出现各种不同的效果，有时也很是郁闷。现在我搜集了一些移动端需要注意的问题，罗列如下，方便自己使用，有需要的朋友们也可以参考。 meta基础知识 1  忽略将页面中的数字识别...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2018-02-15</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;1680次浏览</a>
+                      </span>
+                      <a class="mu-m4">阅读全文</a>
+                  </div>
+              </div>
+            </div>
+            </div>
+             <div class="news" id="tab2_content" style="display: none">
+            <div class="top">
+                <p><span style="color:red">推荐</span>文章 New Blog</p>
+            </div>
+            <div class="mid">
+              <div class="ali-img"><img src="images/优惠券.jpg" width="260px" height="160px"></div>
+              <div class="ali-text">
+                  <h3>CSS3技巧：利用css3径向渐变做一张优惠券</h3>
+                  <div class="ali-con">
+                      <a>在很多购物网站上都能看到优惠券，代金券，什么什么的券，但基本都是图片直接放上去，那么你有没有想过css来做一个呢，那么你要怎么做呢，切图做背景平铺边缘，嗯，有这样想过，如今css3技术这么先进再用背景做平铺是不是已经out了，今天看到这个用css3径向渐变做的优惠券，就学习，收藏了，以防以后需要的时...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2018-01-24</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;1360次浏览</a>
+                      </span>
+                      <a  class="mu-m4" target="_new">阅读全文</a>
+                  </div>
+              </div>
+            </div>
+            <div class="bottom">
+                <div class="dream-img"><img src="images/优化.jpg" width="260px" height="160px"/></div>
+                <div class="ali-text">
+                    <h3>怎么正确的优化自己的网站，个人博客</h3>
+                    <div class="ali-con">
+                      <a target="_new">网站优化是一件工程，也是一项技术，并不是一天两天就可以完成的。这里所说的完成就是在搜索引擎中以一个好的排名展现，也是网站优化的效果。如果你想在短期时间有排名，我相信大家都知道是什么技术了，只有黑帽SEO技术才能快递获取排名，但是这个排名不会长久，...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2017-12-16</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;980次浏览</a>
+                      </span>
+                      <a class="mu-m4" target="_new">阅读全文</a>
+                  </div>
+                </div>
+            </div>
+            <div class="last">
+              <div class="ali-img"><img src="images/keywords.png" width="260px" height="160px"></div>
+              <div class="ali-text">
+                  <h3>如何给网站及个人博客设置目标关键词</h3>
+                  <div class="ali-con">
+                      <a target="_new">如何给网站设置目标关键词?我建的这个个人博客的关键词又该如何设置？那么下边来具体介绍 一、什么目标关键词? 目标关键词是指网站首页要做的关键词，能为网站带来较多的目标流量的关键词。 二、如何获取预选目标关键词? 1、百度搜索下拉列表框 (如：输入“广告”出现与相关的词) 2、百度相关搜索 3、谷歌下...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2017-12-05</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;1250次浏览</a>
+                      </span>
+                      <a class="mu-m4">阅读全文</a>
+                  </div>
+              </div>
+            </div>
+            </div>
+            <div class="news" id="tab3_content" style="display: none">
+            <div class="top">
+                <p><span style="color:red">推荐</span>文章 New Blog</p>
+            </div>
+            <div class="mid">
+              <div class="ali-img"><img src="images/h5.png" width="260px" height="160px"></div>
+              <div class="ali-text">
+                  <h3>HTML5新增标签</h3>
+                  <div class="ali-con">
+                      <a>HTML5新增结构标签 结构标签：(块状元素) 有语意的div < article > 标记定义一篇文章 < header > 标记定义一个页面或一个区域的头部 < nav > 标记定义导航链接 < section > 标记定义一个区域 < as...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2017-11-26</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;3360次浏览</a>
+                      </span>
+                      <a class="mu-m4" target="_new">阅读全文</a>
+                  </div>
+              </div>
+            </div>
+            <div class="bottom">
+                <div class="dream-img"><img src="images/SEO.jpg" width="260px" height="160px"/></div>
+                <div class="ali-text">
+                    <h3>新网站要怎么做SEO优化</h3>
+                    <div class="ali-con">
+                      <a target="_new">“百度快照变慢了、百度收录问题、关键词掉了”，这是新手站长经常问及的问题，新手站长往往会因此吃不下饭、睡不着觉，晓霞也是这样，整天想让自己的文章赶紧被百度收录，但是网站的推广是一个漫长的过程，“心急吃不了热豆腐”，还是不要整天想着一建站就有巨大的流量。同样网站的SEO过程也是相当漫长的，我想这也是和...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2017-11-16</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;1980次浏览</a>
+                      </span>
+                      <a class="mu-m4" target="_new">阅读全文</a>
+                  </div>
+                </div>
+            </div>
+            <div class="last">
+              <div class="ali-img"><img src="images/blog.jpg" width="260px" height="160px"></div>
+              <div class="ali-text">
+                  <h3>如何建立个人博客网站？</h3>
+                  <div class="ali-con">
+                      <a target="_new">想必很多人都想建立一个，属于自己的个人博客网站，把自己的一些学习的经验和经历，通过互联网的形式来分享给别人。通过分享与网友进行互动，让更多的人了解和认识你，并且树立自己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？...</a>
+                  </div>
+                  <div class="ali-meta">
+                      <span>
+                          <img src="images/互联网.png" width="15px" height="15px">
+                          <a>&nbsp;互联网</a>
+                      </span>
+                      <span>
+                          <img src="images/rili.png" width="15px" height="15px">
+                          <a>&nbsp;2017-10-19</a>
+                      </span>
+                      <span>
+                          <img src="images/浏览.png" width="15px" height="15px">
+                          <a>&nbsp;550次浏览</a>
+                      </span>
+                      <a class="mu-m4">阅读全文</a>
+                  </div>
+              </div>
+            </div>
+            </div>
+        <div class="tab_bar">
+                <ul>
+                    <li id="tab1" onclick="myclick(1)" style="background-color: rgba(0,0,0,0.2)">
+                        1
+                    </li>
+                    <li id="tab2" onclick="myclick(2)" >
+                        2
+                    </li>
+                    <li id="tab3" onclick="myclick(3)" >
+                        3
+                    </li>
+                </ul>
+            </div>
+        <div class="right">
+            <div class="right_top">
+                <ul class="right_top_ul">
+                    <li>网站开发</li>
+                    <li>逐梦心得</li>
+                    <li>SEO优化</li>
+                    <li>技术探讨</li>
+                    <li>网站运营</li>
+                    <li>前端实战</li>
+                </ul>
+            </div>
+            <div class="right_mid"><span>这个世界根本不存在"不会做"这回事,当你失去所有依靠的时候,你自然就什么都会了.</span></div>
+            <div class="right_bottom">
+                <div class="img"><img src="images/touxiang.jpg" width="95px" height="125px"></div>
+                <div class="mynews">
+                    <ul>
+                        <li>姓名: 宋瑶</li>
+                        <li>网名: 逐梦</li>
+                        <li>职业: 在校大学生</li>
+                        <li>主页: sy1997.xyz</li>
+                        <li>地址: 江西南昌</li>
+                    </ul>
+                </div>
+                <div class="banner"><p>网站开发+QQ: 1833717392</p></div>
+                <div class="share">
+                    <ul>
+                        <li><img src="images/微信.png"></li>
+                        <li><img src="images/QQ.png"></li>
+                        <li><a href="https://weibo.com/p/1005056392872088/home?from=page_100505&mod=TAB#place"><img src="images/微博.png"></a></li>
+                        <li><img src="images/电话.png"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="show">
+            <div class="banner"><h3><a name="link"><span style="color:red">逐梦</span>作品案例</a></h3></div>
+            <div class="box">
+                <ul class="show-box">
+                    <li><a href="demo/js案例/登录页面.html" target=_new><div class="t-img"><img src="images/黑客帝国.png" width="270px" height="190px"></div>
+                        <p class="t-mid">黑客帝国流星雨<span>逐梦</span></p>
+                        <p class="t-foot">canvas+js打造黑客帝国流星雨背景</p>
+                        </a>
+                    </li>
+                    <li><a href="demo/3D档案库/3D档案库.html" target=_new><div class="t-img"><img src="images/3D档案库.png" width="270px" height="190px"></div>
+                    <p class="t-mid">3D特效<span>逐梦</span></p>
+                    <p class="t-foot">js打造3D空间特效</p>
+                    </a></li>
+                    <li><a href="demo/2017年度人物大赏/2017年度人物大赏.html" target=_new><div class="t-img"><img src="images/2017.png" width="270px" height="190px"></div><p class="t-mid">2017年度人物大赏<span>逐梦</span></p>
+                    <p class="t-foot">纯css打造3D旋转效果</p>
+                    </a></li>
+                    <li><a href="demo/拳皇/拳皇.html" target=_new><div class="t-img"><img src="images/拳王.png" width="270px" height="190px"></div><p class="t-mid">拳王小游戏<span>逐梦</span></p>
+                    <p class="t-foot">js键盘事件控制人物动作</p>
+                    </a></li>
+                    <li><a href="demo/js案例/导航.html" target=_new><div class="t-img"><img src="images/导航.png" width="270px" height="190px"></div><p class="t-mid">PC版导航<span>逐梦</span></p>
+                    <p class="t-foot">参照高德API做出的一款地图导航</p>
+                    </a></li>
+                    <li><a href="demo/飞机大战/01 飞机大战.html" target=_new><div class="t-img"><img src="images/飞机大战.png" width="270px" height="190px"></div><p class="t-mid">飞机大战<span>逐梦</span></p>
+                    <p class="t-foot">js面向对象思维+碰撞检测打造的飞机大战小游戏,含有四个不同难度模式.</p>
+                    </a></li>
+                    <li><a href="demo/飞熊/飞熊new.html" target=_new><div class="t-img"><img src="images/飞熊.png" width="270px" height="190px"></div><p class="t-mid">飞熊网页<span>逐梦</span></p>
+                    <p class="t-foot">使用飞熊公司素材做的一个网页案例</p>
+                    </a></li>
+                    <li><a href="demo/音乐播放器/音乐播放器.html" target=_new><div class="t-img"><img src="images/音乐播放器.png" width="270px" height="190px"></div><p class="t-mid">音乐播放器<span>逐梦</span></p>
+                    <p class="t-foot">H5音频标签+js打造的简单播放器</p>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <span>© 2018-未来  &nbsp;逐梦的个人博客    &nbsp;&nbsp;版权所有 </span>
+    </div>
+</div>
+<div id="flybtn" class="fly" style="display: none"><img src="images/返回顶部.png"></div>
+        <script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+        <script type="text/javascript"  src="js/zhumeng.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/piano-play.js"></script>
+        <script src="js/piano.js"></script>
+        <script src="js/jquery-1.11.3.min.js"></script>
+</body>
+</html>

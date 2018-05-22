@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <base href="//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/" /> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>移动导航</title>
+    <meta name="keywords" content="地图,导航">
+    <meta name="description" content="">
+    <style>
+        *{margin:0px;padding:0px;}
+        body{
+            overflow:hidden;
+        }
+        .head{
+            width:100%;
+            height:55px;
+            background:#3f4b59;
+        }
+        .head .h-center{
+            width:90%;
+            height:55px;
+            margin:0 auto;
+            position:relative;
+        }
+        .head .h-center .h-mid{
+          width:210px;
+          height:55px;
+          position:absolute;
+          left:330px;
+          top:0px;
+        }
+        .banner{
+         /*  display:flex;
+          justify-content:space-between; */
+          list-style:none;
+          margin-top:10px;
+          padding:0px;
+          transition:1.5s;
+          margin-left:130px;
+        }
+        .banner:hover{
+          z-index:2;
+          display:block;
+          position: absolute;
+          background-color:#3f4b59;
+        }
+        .banner li{
+          width:80px;
+          height:40px;
+          font-size:16px;
+          font-weight:bold;
+          line-height:40px;
+          color:white;
+          cursor: pointer;
+          transition:1s;
+          text-align:center;
+
+
+        }
+        .banner li:hover{
+          color:#19acdd;
+          z-index:2;
+          background-color:#3f4b59;
+        }
+        .color{
+          list-style:none;
+          margin-top:10px;
+          padding:0px;
+          transition:1.5s;
+          float:left;
+
+        }
+        .color li{
+          width:80px;
+          height:40px;
+          font-size:16px;
+          font-weight:bold;
+          line-height:40px;
+          color:white;
+          cursor: pointer;
+          transition:1s;
+          text-align:center;
+        }
+        .color:hover{
+          z-index:2;
+          display:block;
+          position: absolute;
+          background-color:#3f4b59;
+        }
+        .color li:hover{
+          color:#19acdd;
+          z-index:2;
+          background-color:#3f4b59;
+        }
+        #track{
+          width:80px;
+          height:40px;
+          font-size:16px;
+          font-weight:bold;
+          line-height:40px;
+          color:white;
+          cursor: pointer;
+          transition:1s;
+          text-align:center;
+          position:absolute;
+          top:10px;
+          left:260px;
+        }
+        #track:hover{
+          color:#19acdd
+        }
+        .head .head-search{
+            width:400px;
+            height:50px;
+            float:right;
+            line-height:55px;
+            color:#fff;
+            font-size:16px;
+            font-weight:bold;
+        }
+        .head .head-search .txt{
+            width:100px;
+            height:30px;
+        }
+        .head .head-search .btn{
+            width:70px;
+            height:33px;
+            text-align:center;
+            line-height:30px;
+            outline:none;
+            border:none;
+            background:#4d7ed9;
+            color:#fff;
+            font-size:15px;
+            cursor: pointer;
+            transition:.3s;
+        }
+        .head .head-search .btn:hover{
+            transform:scale(1.05);
+            transition:.3s;
+        }
+        .map{
+            width:100%;
+            height:94vh;/*所占视图高度百分比*/
+        }
+    </style>
+</head>
+<body>
+  <div class="head">
+      <div class="h-center">
+       <img src="images/1.png" width="80px" height="55px" alt="logo">
+       <div class="h-mid">
+       <ul class="color" id="col">
+         <li>地图主题</li>
+         <li><input type='radio' onclick='refresh(this.value)' checked name='mapStyle' value='normal'>标&nbsp;&nbsp;&nbsp;准</li>
+         <li><input type='radio' onclick='refresh(this.value)' name='mapStyle' value='dark'>幻影黑</li>
+         <li> <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='light'>月光银</li>
+         <li> <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='fresh'>草色青</li>
+         <li><input type='radio' onclick='refresh(this.value)' name='mapStyle' value='darkblue'>极夜蓝<br></li>
+         <li><input type='radio' onclick='refresh(this.value)' name='mapStyle' value='whitesmoke'>远山黛</li>
+         <li> <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='macaron'>马卡龙</li>
+         <li><input type='radio' onclick='refresh(this.value)' name='mapStyle' value='wine'>酱&nbsp;&nbsp;&nbsp;籽</li>
+       </ul>
+         <ul class="banner" id="change">
+           <li>视图选择</li>
+           <li id="local">鹰眼</li>
+           <li id="view">3D视图</li>
+           <li id="heatmap">热力图</li>
+           <li id="satellite">卫星图</li>
+         </ul>
+         <span id="track">轨迹回放</span>
+       </div>
+       <div class="head-search">
+           <span>出发地:</span><input type="text" class="txt" id="start">
+           <span>目的地:</span><input type="text" class="txt" id="end">
+           <input type="button" value="规划路线" class="btn" onclick="tz_search(this)">
+       </div>
+      </div>
+  </div>
+  <div class="map" id="mapContainer"></div>
+  <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=28055c1bc57defef57ccca6411ba31ca&plugin=AMap.Driving"></script>
+
+<script type="text/javascript">
+var AMapUIProtocol = 'https:';  //注意结尾包括冒号
+</script>
+<!-- https 方式引入入口文件 -->
+<script src="https://webapi.amap.com/ui/1.0/main.js"></script>
+  <script>
+    //初始化地图
+      var map=new AMap.Map("mapContainer",{
+        zoom:18,//缩放级别
+        // center:[115.869114,28.747864]
+        resizeEnable: true
+      });
+
+//轨迹回放
+var flag=true;
+document.getElementById("track").onclick=function(){
+  // alert("轨迹回放");
+  //防止重复点击
+  if(flag){
+     //点标记
+//   var lnglats=[
+//  [115.869265,28.736864],[115.869262,28.747123],
+//  [115.866886,28.744562],[115.871467,28.739498]
+// ];
+// var infoWindow = new AMap.InfoWindow();
+// for(var i = 0, marker; i < lnglats.length; i++){
+//     marker=new AMap.Marker({
+//         position:lnglats[i],
+//         map:map,
+//         animation:"AMAP_ANIMATION_DROP"
+//     });
+//     marker.content='我是第'+i+'个信息窗体的内容';
+//     //给Marker绑定单击事件
+//     marker.on('click', markerClick);
+
+// }
+// //处理marker单击事件
+// map.setFitView();
+// function markerClick(e){
+//     infoWindow.setContent(e.target.content);
+//     infoWindow.open(map, e.target.getPosition());
+// };
+//   //组件加载
+// AMapUI.loadUI([
+//     'overlay/SimpleMarker',//SimpleMarker
+//     'overlay/SimpleInfoWindow',//SimpleInfoWindow
+//     ],
+// function(SimpleMarker, SimpleInfoWindow) {
+//     //....引用加载的UI....
+// });
+// //加载PathSimplifier，loadUI的路径参数为模块名中 'ui/' 之后的部分
+// AMapUI.load(['ui/misc/PathSimplifier'], function(PathSimplifier) {
+
+//     if (!PathSimplifier.supportCanvas) {
+//         alert('当前环境不支持 Canvas！');
+//         return;
+//     }
+//     //启动页面
+//     initPage(PathSimplifier);
+// });
+//   function initPage(PathSimplifier) {
+//     //创建组件实例
+//     var pathSimplifierIns = new PathSimplifier({
+//         zIndex: 100,
+//         map: map, //所属的地图实例
+//         getPath: function(pathData, pathIndex) {
+//             //返回轨迹数据中的节点坐标信息，[AMap.LngLat, AMap.LngLat...] 或者 [[lng|number,lat|number],...]
+//             return pathData.path;
+//         },
+//         getHoverTitle: function(pathData, pathIndex, pointIndex) {
+//             //返回鼠标悬停时显示的信息
+//             if (pointIndex >= 0) {
+//                 //鼠标悬停在某个轨迹节点上
+//                 return pathData.name + '，点:' + pointIndex + '/' + pathData.path.length;
+//             }
+//             //鼠标悬停在节点之间的连线上
+//             return pathData.name + '，点数量' + pathData.path.length;
+//         },
+//         renderOptions: {
+//             //轨迹线的样式
+//             pathLineStyle: {
+//                 strokeStyle: 'red',
+//                 lineWidth: 6,
+//                 dirArrowStyle: true
+//             }
+//         }
+//     });
+//     //这里构建两条简单的轨迹，仅作示例
+//     pathSimplifierIns.setData([{
+//         name: '轨迹0',
+//         path: [
+//             [115.869265, 28.736864],
+//             [115.867876, 28.738289],
+//             [115.867615, 28.741809],
+//             [115.866886, 28.744562],
+//             [115.869262, 28.747123],
+//             [115.871467, 28.739498]
+//         ]
+//     }]);
+//     //创建一个巡航器
+//     var navg0 = pathSimplifierIns.createPathNavigator(0, //关联第1条轨迹
+//         {
+//             loop: true, //循环播放
+//             speed: 100
+//         });
+
+//     navg0.start();
+//}
+AMapUI.load(['ui/misc/PathSimplifier', 'lib/$'], function(PathSimplifier, $) {
+
+        if (!PathSimplifier.supportCanvas) {
+            alert('当前环境不支持 Canvas！');
+            return;
+        }
+        //just some colors
+        var colors = [
+            "#3366cc", "#dc3912", "#ff9900"
+        ];
+
+        var pathSimplifierIns = new PathSimplifier({
+            zIndex: 100,
+            //autoSetFitView:false,
+            map: map, //所属的地图实例
+            getPath: function(pathData, pathIndex) {
+                return pathData.path;
+            }
+        });
+     $.getJSON('http://a.amap.com/amap-ui/static/data/big-routes.json', function(d) {
+            $('#loadingTip').remove();
+            var flyRoutes = [];
+            for (var i = 0, len = d.length; i < len; i++) {
+                    d.splice(i, 0, {
+                        path: PathSimplifier.getGeodesicPath(
+                            d[i].path[0], d[i].path[d[i].path.length - 1], 100)
+                    });
+                    i++;
+                    len++;
+            }
+            pathSimplifierIns.setData(d);
+            function onload() {
+                pathSimplifierIns.renderLater();
+            }
+            //创建一个巡航器
+            var navg0 = pathSimplifierIns.createPathNavigator(1, {
+                loop: true, //循环播放
+                speed: 500000
+            });
+            navg0.start();
+        });
+    });
+}
+flag = false;
+        };
+
+      //实例化导航对象
+      var driving=new AMap.Driving({
+        map:map,
+      // panel:"panel"
+      });
+      function tz_search(){
+      var start=document.getElementById("start").value;
+      var end=document.getElementById("end").value;
+      driving.search([
+      {keyword:start},
+      {keyword:end}
+      ]);
+      };
+      var geolocation;
+      //加载地图，调用浏览器定位服务
+        map.plugin('AMap.Geolocation', function() {
+        geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+            buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+            zoomToAccuracy: true,//定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+            buttonPosition:'LB',
+            animateEnable:true//平移过程动画
+        });
+        map.addControl(geolocation);
+        geolocation.getCurrentPosition();
+        AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+        AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+    });
+    //解析定位结果
+    function onComplete(data) {
+        var str=['定位成功'];
+        str.push('经度：' + data.position.getLng());
+        str.push('纬度：' + data.position.getLat());
+        if(data.accuracy){
+             str.push('精度：' + data.accuracy + '米');
+        }//如为IP精确定位结果则没有精度信息
+    }
+
+     var toolBar;
+     var customMarker = new AMap.Marker({
+        offset: new AMap.Pixel(-14, -34),//相对于基点的位置
+        icon: new AMap.Icon({  //复杂图标
+            size: new AMap.Size(27, 36),//图标大小
+            image: "http://webapi.amap.com/images/custom_a_j.png", //大图地址
+            imageOffset: new AMap.Pixel(-28, 0)//相对于大图的取图位置
+        })
+    });
+    //地图中添加地图操作ToolBar插件
+    map.plugin(["AMap.ToolBar"], function() {
+        toolBar = new AMap.ToolBar({locationMarker: customMarker}); //设置地位标记为自定义标记
+        map.addControl(toolBar);
+    });
+
+    //加载鹰眼
+    document.getElementById("local").onclick=function(){
+      // alert("鹰眼");
+    var mapObj = new AMap.Map("mapContainer");
+    mapObj.plugin(["AMap.OverView"],function(){
+      view = new AMap.OverView({
+        isOpen:true,
+        visible:true
+
+        });
+    mapObj.addControl(view)
+    })
+  };
+  //加载3D视图
+  document.getElementById("view").onclick=function(){
+    // alert("3D");
+    var map = new AMap.Map('mapContainer',{
+    pitch:75,//俯仰角,有效范围(0,83)
+    viewMode:'3D',//视图模型
+    zoom: 17,
+    expandZoomRange:true,
+    zooms:[3,20],
+    center:[115.869114,28.747864]
+  })
+  };
+   //加载街景
+     document.getElementById("heatmap").onclick=function(){
+     alert("热力图");
+  };
+  //加载卫星视图
+  document.getElementById("satellite").onclick=function(){
+  var satellLayer = new AMap.TileLayer.Satellite({zIndex:10}); //实例化卫星图
+  satellLayer.setMap(map);
+};
+
+//使用鼠标工具，在地图上画标记点标点
+map.plugin(["AMap.MouseTool"],function(){
+    var mouseTool = new AMap.MouseTool(map);
+    mousetooL.marker();
+});
+//地图主题
+function refresh(enName) {
+        map.setMapStyle('amap://styles/'+enName);
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>黑客帝国彩色流星雨</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            /* background:url("images/8_20.gif"); */
+            overflow:hidden;
+        }
+        #login{
+            width:380px;
+            height:270px;
+            /* border:1px solid red; */
+            margin:200px auto;
+            color:#fff;
+            font-size:18px;
+            position:absolute;
+            left:520px;
+            top:0px;
+        }
+         #login h3{
+            display:block;
+            margin-left:140px;
+         }
+        #login input{
+            width:240px;
+            height:35px;
+            margin-left:10px;
+            /* background-color:#808080; */
+            border:0px;
+            font-size:18px;
+        }
+        #login .yzm{
+            width:80px;
+            color:#000;
+            line-height:35px;
+            text-align:center;
+            font-size:20px;
+        }
+        #login p1{
+            color:#fff;
+            text-decoration: none;
+            margin-left:120px;
+            cursor:pointer;
+        }
+        #login p1:hover{
+           text-decoration:underline;
+        }
+        #login .btn{
+            width:96px;
+            height:25px;
+            border:0px;
+            margin-left:140px;
+            font-size:18px;
+            border-radius:10px;
+        }
+        #login .iconfont-1{
+           background-image:url(images/mine.png);
+           background-size: 35px 35px;/*小图标的大小*/
+           background-repeat: no-repeat;/*背景小图标不重复*/
+           padding: 0px 10px 0px 40px;/*设置input内边距*/
+           }
+        #login .iconfont-2{
+           background-image:url(images/unlock.png);
+           background-size: 35px 35px;/*小图标的大小*/
+           background-repeat: no-repeat;/*背景小图标不重复*/
+           padding: 0px 10px 0px 40px;/*设置input内边距*/
+           }
+        #login #code{
+            width:80px;
+            height:35px;
+            position:absolute;
+            left:170px;
+            top:175px;
+            background:#fff;
+            color:#000;
+            line-height:35px;
+            text-align:center;
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+ <canvas id="canvas"></canvas>
+ <script>
+     var canvas=document.getElementById("canvas");
+     var can=canvas.getContext("2d");
+     var s=window.screen;//获取浏览器屏幕
+     var w=canvas.width=s.width;
+     var h=canvas.height=s.height;
+     // can.fillStyle="#ff0099";
+     // can.font="20px 微软雅黑";
+     // can.fillText("黑客帝国彩色流星雨",100,100);//绘制文本,坐标X,坐标y;
+     var words=Array(256).join("1").split("");//生成一个数组来保存数值
+     function draw(){
+        can.fillStyle="rgba(0,0,0,0.05)";//设置fill方法的颜色
+        can.fillRect(0,0,w,h);//绘制矩形
+        can.fillStyle=color();
+        words.map(function(y,n){//数组里面元素的一个映射
+             text=String.fromCharCode(65+Math.ceil(Math.random()*58));
+             x=n*10;
+             can.fillText(text,x,y);
+             words[n]=(y>758+Math.random()*484)?0:y+10;
+        });
+     }
+     setInterval(draw,50);
+   //生成随机颜色
+   function color(){
+    var colors=[0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"];
+    var color="";
+    for(var i=0;i<6;i++){
+    var n=Math.ceil(Math.random()*15);//产生随机数
+    color+="" + colors[n];
+    if(i==5){
+        return "#" + color;
+    }
+         }
+   }
+   color();
+ </script>
+ <div id="login">
+ <h3>用户登陆</h3>
+     <form>
+         <p>用户名  :<input type="text" id="user" class="iconfont-1"/></p>
+         <p>密&nbsp;&nbsp;&nbsp;码 :<input type="password" id="keyword" class="iconfont-2"/></p>
+         <p>验证码  :<input type="text" class="yzm" id="nub"/><span  id="code"></span><p1 onclick="displayNum()"/>看不清?</p1></p>
+         <input type="submit" class="btn" value="登陆"  id="log" onclick="validata()"/>
+     </form>
+     <script>
+     //初始化页面生成验证码
+     window.onload=function(){
+        creatCode();
+        displayNum();
+     }
+     //随机生成验证码
+     function creatCode(){
+        var nums=[0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        var num="";
+        var numLength=4;
+        for(var i=0;i<4;i++){
+            var n=Math.ceil(Math.random()*36);
+            num+=""+nums[n];
+            if(i==3){
+                return num;
+            }
+        }
+     };
+     function displayNum(){
+     document.getElementById("code").innerHTML=creatCode();
+     };
+     //验证码匹配
+     // document.getElementById("code").addEventListener("change",validata);
+     function validata(){
+        var inputCode = document.getElementById("nub").value.toUpperCase();//将字母全部转为大写
+        var inputUser = document.getElementById("user").value;
+        if(inputCode.length<=0){
+            alert("请输入验证码");
+
+        }else if(inputCode==creatCode()){
+            alert("验证码输入正确");
+        }else{
+            alert("^-^");
+        }
+     };
+     </script>
+ </div>
+</body>
+</html>

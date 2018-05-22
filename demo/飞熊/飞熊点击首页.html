@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>模拟点击特效</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<style>
+html{
+	height:100%;
+	}
+body{
+	display:flex;
+	justify-content:center;/*子元素水平居中排列*/
+	align-items:center;/*子元素竖直居中排列*/
+	height:100%;
+	margin:0;
+	background-image:linear-gradient(#f17c67 50%,#376956 50%);/*线性渐变颜色*/
+	}
+.box{
+	position:relative;
+	display:flex;
+	height:90px;
+	border-radius:10px;
+	background-color:#FFF;
+	}
+.box .list{
+	width:0;
+	height:90px;
+	transition:.6s;
+	overflow:hidden;
+	}
+.box .btn{
+	position:relative;/*约束小长条*/
+	float:right;
+	width:90px;
+	height:90px;
+	}
+.box .btn:before{
+	position:absolute;
+	left:25px;
+	top:52.5px;
+	width:40px;
+	height:5px;
+	background:#000;
+	content:"";
+	transform:rotate(-180deg);
+	transition:.6s;
+	}
+.box .btn:after{
+	position:absolute;
+	left:25px;
+	top:32.5px;
+	width:40px;
+	height:5px;
+	background:#000;
+	content:"";
+	transform:rotate(180deg);
+	transition:.6s;
+	}
+.box .list ul{
+	display:flex;
+	list-style:none;
+	width:300px;
+	margin:0;
+	padding:0;
+	}
+.box .list ul li{
+	width:75px;
+	height:90px;
+	text-align:center;
+	line-height:90px;
+	font-size:14px;
+	font-weight:bold;/*文字粗细*/
+	color:#666;
+	cursor:pointer;
+	transition:1s;
+	}	
+.box .list ul li:hover{
+	color:#6fc;
+	}
+.box .checkbox:checked~.btn:before{/*被勾选后会出现下面特点*/
+	transform:rotate(45deg);
+	top:42.5px;
+	}
+.box .checkbox:checked~.btn:after{/*被勾选后会出现下面特点*/
+	transform:rotate(-45deg);
+	top:42.5px;
+	}
+.box .checkbox:checked~.list{
+	width:300px;
+	}
+.box .checkbox{
+	position:absolute;
+	right:0;
+	width:90px;
+	height:90px;
+	z-index:2;
+	opacity:0;
+	}
+input{
+	margin:0;
+	}
+</style>
+</head>
+<body>
+<div class="box">
+<input class="checkbox" type="checkbox" />
+<div class="list">
+<ul>
+    <li>主页</li>
+    <li>企业详情</li>
+    <li>关于</li>
+    <li>联系方式</li>
+</ul>
+</div>
+<div class="btn"></div>
+</div>
+</body>
+</html>

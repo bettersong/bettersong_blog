@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>3D档案库</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+   <div id="main">
+       <div id="list">
+         <ul>
+         </ul>
+         </div>
+      <div id="btn">
+        <ul>
+            <li>Grid</li>
+            <li>Helix</li>
+            <li class="tab">Sphere</li>
+            <li class="tab">Table</li>
+        </ul>
+      </div>
+      <div id="alert" class="before">
+      <div class="title"><span>档案库</span></div>
+      <div class="img"><img src="img/test.png"></div>
+      <div class="author"><span>宋瑶</span></div>
+      <div class="info"><span>描述</span></div>
+    </div>
+    <!--返回按钮-->
+    <div id="back">Back</div>
+    </div>
+    <script src="js/data.js"></script>
+    <script>
+    var sphere=document.getElementsByTagName("tab");
+         onclick=function(sphere){
+         alert("暂未开放");
+         };
+        function Magic(){
+            this.listNum=5*5*5;
+            this.oUl=document.getElementById("list").children[0];
+            this.aLi=this.oUl.children;
+            this.aBtn=document.getElementById("btn").getElementsByTagName("li");
+        }
+        Magic.prototype={
+            init:function(){
+            for(var i=0;i<this.listNum;i++){
+                var oLi = document.createElement("li")
+                var d=flyData[0];
+                oLi.innerHTML="<b class='liCover'></b>"+"<p class='liTitle'>"+d.type+"</p>"+"<p class='liAuthor'>"+d.author+"</p>"+"<p class='liTime'>"+d.time+"</p>";
+                var tX=Math.random()*6000-3000,
+                    tY=Math.random()*6000-3000,
+                    tZ=Math.random()*6000-3000;
+                oLi.style.transform="translate3D("+tX+"px,"+tY+"px,"+tZ+"px)";
+                this.oUl.appendChild(oLi);
+            }
+            setTimeout(function(){
+             this.grid();
+            }.bind(this),200);
+            this.clickEvent();
+        },
+        clickEvent:function(){
+            //数组映射,通过下标去找
+            var arr=[this.grid,this.helix];
+            for(var i=0;i<this.aBtn.length;i++){
+               this.aBtn[i].onclick=arr[i].bind(this);
+            }
+        },
+        //网格式布局
+        grid: function() {
+            if(this.grid.arr){
+               for(var i=0;i<this.listNum;i++){
+                 this.aLi[i].style.transform=this.grid.arr[i];
+             }
+            }else{
+               this.grid.arr=[];
+               var disX=350;
+               var disY=350;
+               var disZ=600;
+               for(var i=0;i<this.listNum;i++){
+                  this.aLi.x=i%5;
+                  this.aLi.y=~~(i%25/5);
+                  this.aLi.z=4 - ~~(i/25);
+                  var x=(this.aLi.x-2)*disX;
+                  var y=(this.aLi.y-2)*disY;
+                  var z=(this.aLi.z-2)*disZ;
+                  var val="translate3D("+x+"px,"+y+"px,"+z+"px)";
+                  this.grid.arr[i]=val;
+                  this.aLi[i].style.transform=val;
+
+             }
+           }
+       },
+       //螺旋式布局
+       helix:function(){
+        if(this.helix.arr){
+             for(var i=0;i<this.listNum;i++){
+             this.aLi[i].style.transform=this.helix.arr[i];
+         }
+        }else{
+            this.helix.arr=[];
+            var h=3.7,//环数
+                 num=this.listNum/h,//每环个数
+                 deg=360/num,//每一个li Y旋转的相差值
+                 tY=9,//让每一个li上下位移差
+                 mid=this.listNum/2;//找中间点
+            for(var i=0;i<this.listNum;i++){
+                var val="rotateY("+i*deg+"deg) translateY("+(i-mid)*tY+"px) translateZ(800px)";
+                this.helix.arr[i]=val;
+                this.aLi[i].style.transform=val;
+                this.aLi[i].style.transform=val;
+               }
+            }
+       }
+    };
+        var magic=new Magic();
+        magic.init();
+    </script>
+</body>
+</html>

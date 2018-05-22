@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>拳皇小游戏</title>
+    <style>
+        html{
+            height:100%;
+        }
+        body{
+            background:url("images/bj2.jpg") no-repeat center/100% 100%;
+            margin:0px;
+            padding:0px;
+        }
+        #site{
+            position:relative;
+            height:100%;
+        }
+        img{
+            width:240px;
+            height:320px;
+            /* background:#fff; */
+            position:absolute;
+            top:300px;
+            left:100px;
+    </style>
+</head>
+<body>
+<div id="site">
+    <img src="images/1.gif"  id="MC" person-name="yagami">
+</div>
+<script>
+
+
+    var oImg=document.getElementById("MC");
+
+    function Player(imgNode){
+        var imgNode=imgNode;
+        this.getImg=function(){
+            return imgNode;
+        }
+    };
+    var skill={
+        "yagami":{
+             "advance":function(){
+                // if(commands=="119"){
+                //  player.getImg().src="images/2 (7).gif ";
+                // }else{
+                //    player.getImg().src="images/1.gif ";
+                // }
+               player.getImg().src="images/2 (7).gif";
+               // player.getImg().style="left:200px";
+               // player.getImg().time="1s";
+             },
+             "retreat":function(){
+                player.getImg().src="images/2 (4).gif ";
+             },
+             "boom":function(){
+                player.getImg().src="images/2 (3).gif ";
+             },
+             "run":function(){
+                player.getImg().src="images/2 (5).gif ";
+             },
+             "down":function(){
+                player.getImg().src="images/2 (6).gif ";
+             }
+
+        },
+        "fireGords":null
+
+    }
+    var player=new Player(oImg);
+    var playName=player.getImg().getAttribute("person-name");
+    var commands={
+        "119":"advance",//w
+        "97":"retreat",//a
+        "111":"boom",//o
+        "100" :"run",//d
+        "115" :"down"//s
+    };
+    var makeCommand=function(objCommand,state){
+        return function(){
+           if (typeof objCommand[state]=="function")
+           {
+                  objCommand[state]();
+           }
+
+        }
+    };
+
+    document.onkeypress=function(ev){
+        var keyCode=ev.keyCode,
+        command=makeCommand(skill[playName],commands[keyCode]);//生成一个命令
+
+        command();
+        // this.onkeyup=function(){
+        //     player.getImg().src="images/站立.gif ";
+        // }
+    }
+</script>
+</body>
+</html>

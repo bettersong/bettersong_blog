@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+"http://www.w3.org/TR/html4/loose.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+    <head>  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <title>New Web Project</title>  
+        <style type="text/css">
+		body{
+			margin:0;
+			padding:0;
+			} 
+            .tab_bar {  
+               width: 210px;
+               height: 410px;
+               float: left;
+               margin: 0 55px;
+			   border:1px solid #ccc;
+               
+            }  
+            .tab_bar ul {
+                padding: 0px;  
+                margin-top:50px;  
+                height: 50px;  
+                text-align: center;
+				line-height:50px;
+				padding:0; 
+            }  
+              
+            .tab_bar ul li {  
+                list-style-type: none;   
+                width: 210px;  
+                height: 50px;
+				margin-top:10px;
+				border-top:1px solid #ccc;
+				border-bottom:1px solid #ccc;
+				cursor:pointer;   
+            }  
+            .tab_bar ul li:hover{
+				background-color:#0FF;
+				}  
+            .tab_css {  
+                width:950px;  
+                height:410px;  
+				margin-left:330px;   
+            }  
+.tab_css h3{
+	position:relative;
+	display:block;
+	height:40px;
+	border-bottom:dotted #999;
+	color:#F06402;
+	font-size:30px;
+	}
+.tab_css .list{
+	list-style:square;
+	color:#F06402;
+	margin-top:-20px;
+	margin-left:10px;
+	padding:0;
+	}
+.tab_css li{
+	height:30px;
+	margin-top:5px;
+	border-bottom:1px dashed #ccc;
+	}
+.tab_css li p1{
+	color:#000;
+	line-height:30px;
+	font-weight:bold;
+	font-size:14px;
+	}
+.tab_css li p2{
+	color:#000;
+	line-height:30px;
+	font-size:14px;
+	float:right;
+	} 
+        </style>  
+        <script type="text/javascript">  
+            var myclick = function(v) {  
+                var llis = document.getElementsByTagName("li");  
+                for(var i = 0; i < llis.length; i++) {  
+                    var lli = llis[i];  
+                    if(lli == document.getElementById("tab" + v)) {  
+                        lli.style.backgroundColor = "#ccc";  
+                    } else {  
+                        lli.style.backgroundColor = "#fff";  
+                    }  
+                }  
+  
+                var divs = document.getElementsByClassName("tab_css");  
+                for(var i = 0; i < divs.length; i++) {  
+  
+                    var divv = divs[i];  
+  
+                    if(divv == document.getElementById("tab" + v + "_content")) {  
+                        divv.style.display = "block";  
+                    } else {  
+                        divv.style.display = "none";  
+                    }  
+                }  
+  
+            }  
+        </script>  
+    </head>  
+    <body>    
+            <div class="tab_bar">  
+                <ul>  
+                    <li id="tab1" onclick="myclick(1)" style="background-color: rgba(0,0,0,0.3)">  
+                        公司新闻  
+                    </li>  
+                    <li id="tab2" onclick="myclick(2)" >  
+                        行业新闻  
+                    </li>  
+                    <li id="tab3" onclick="myclick(3)" >  
+                        媒体报道  
+                    </li>  
+                </ul>  
+            </div>  
+            <div class="tab_css" id="tab1_content" style="display: block">  
+                <h3>News show</h3>
+         <ul class="list">
+            <li><P1>飞熊游乐诚挚邀请您！</P1><p2>2017-10-18</p2></li>
+            <li><P1>迎中秋，祝飞熊同仁多安康；庆国庆，愿飞熊大地更辉煌</P1><p2>2017-09-30</p2></li>
+            <li><P1>告知函</P1><p2> 2017-09-15</p2></li>
+            <li><P1>前辈之精神 吾辈之楷模</P1><p2>2017-08-01</p2></li>
+            <li><P1>待到山花烂漫时，我在丛中笑</P1><p2> 2017-05-02</p2></li>
+            <li><P1>飞熊主题创意有限公司温馨提示</P1><p2> 2017-01-21</p2></li>
+            <li><P1>我公司举行新年酒会</P1><p2> 2017-01-20</p2></li>
+            <li><P1>2016广州电子游戏国际产业展GTI Asia China Expo 2016</P1><p2> 2016-09-05</p2></li>
+            <li><P1>中共永嘉县委娄绍光书记到公司考察指导工作</P1><p2>2016-08-24</p2></li>
+            <li><P1>中国玩具和婴童用品协会梁梅会长及王艳梅副秘书长莅临我司考察指导</P1><p2>2016-05-28</p2></li>
+        </ul>  
+            </div>  
+            <div class="tab_css" id="tab2_content" style="display: none">  
+                      <h3>News show</h3>
+         <ul class="list">
+            <li><P1>游乐场设备在哪批发?哪里可以买到这些设备？</P1><p2>2017-11-8</p2></li>
+            <li><P1>适合庙会赶集用可移动小型海盗船新款推荐</P1><p2>2017-08-12</p2></li>
+            <li><P1>移动海盗船，经营游乐设备首选项目。</P1><p2> 2017-08-5</p2></li>
+            <li><P1> 郑州市梦之龙游乐设备制造有限公司是专业海盗船游乐设备厂家</P1><p2>2017-08-01</p2></li>
+            <li><P1>我们的设备出厂前经过超负荷安全运转测试</P1><p2> 2017-07-22</p2></li>
+            <li><P1>新颖 —— 外观细腻，5道打磨工序，3层以上喷漆工艺</P1><p2> 2017-06-01</p2></li>
+            <li><P1>省心 —— 1年质保，终身保修，一个电话解决所有问题</P1><p2> 2017-05-20</p2></li>
+            <li><P1>专业 —— 行内10以上工程师，为您的设备保驾护航</P1><p2> 2016-12-15</p2></li>
+            <li><P1>不用担心投资大，不用担心场地不好找</P1><p2>2016-12-04</p2></li>
+        </ul>   
+            </div>  
+            <div class="tab_css" id="tab3_content" style="display: none">  
+                       <h3>News show</h3>
+         <ul class="list">
+            <li><P1>2017中国国际文化娱乐产业博览会即将开幕！</P1><p2>2017-10-18</p2></li>
+            <li><P1>VR与AR作为新兴领域，存在更多普通人难以看到的前景和机会。</P1><p2>2017-09-30</p2></li>
+            <li><P1>文化娱乐在"十三五"期间迎来一个全新的发展机遇。</P1><p2> 2017-09-15</p2></li>
+            <li><P1>树立正确价值导向、开发健康益智游戏</P1><p2>2017-08-01</p2></li>
+            <li><P1>"一带一路"战略为中国各行业转型升级，拓展市场空间带来了千载难逢新机遇</P1><p2> 2017-05-02</p2></li>
+            <li><P1>人民日报：研发AR\VR等创新技术，向网络强国扬帆起航</P1><p2> 2017-01-21</p2></li>
+            <li><P1>山东惊现"迪士尼"，投资30个亿的游乐场你见过吗？</P1><p2> 2017-01-20</p2></li>
+            <li><P1>恒大童世界天府青龙大桥正式开工建设</P1><p2> 2016-09-05</p2></li>
+            <li><P1>《文化部关于引导迷你歌咏亭市场健康发展的通知》有关问题解读</P1><p2>2016-08-24</p2></li>
+            <li><P1>国内首座横跨黄河的3D玻璃桥，比张家界玻璃栈道恐怖100倍</P1><p2>2016-05-28</p2></li>
+        </ul>    
+            </div>  
+        </div>  
+    </body>  
+</html>  

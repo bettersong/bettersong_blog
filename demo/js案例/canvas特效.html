@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>canvas特效</title>
+    <style>
+        body{margin:0;}
+        #bubble{
+          display:block;
+          width:100%;
+          height:100%;
+        }
+    </style>
+</head>
+<body>
+      <canvas id="bubble"></canvas>
+      <script>
+          var canvas=document.querySelector("#bubble");
+          var w,h;
+          var aColor=["#99CCCC","#FF9999","#CC9999","#993366","#666699"]
+          var aBubble=[];
+          ~~function setSize(){
+            window.onresize=arguments.callee;
+            w=window.innerWidth;
+            h=window.innerHeight;
+            canvas.width=w;
+            canvas.height=h;
+          }();
+          var canCon=canvas.getContext("2d");
+          // canCon.fillstyle="blue";
+          // canCon.arc(233,233,50,0,Math.PI*2);
+          // canCon.fill();
+          // var y=100,x=100;
+          // setInterval(function(){
+          //  canCon.beginPath();
+          //  canCon.clearRect(0,0,w,h);
+          //  canCon.fillStyle="blue";
+          //  canCon.arc(x++,y++,50,0,Math.PI*2);
+          //  canCon.fill();
+          // },1000/60);
+          function random(min,max){
+            return Math.random()*(max-min)+min;
+          }
+          function Bubble(){};
+          Bubble.prototype={
+            init:function(){
+                this.x=random(0,w);
+                this.y=random(0,h);
+                this.r=random(1,5);
+                this.color=aColor[Math.floor(random(0,5))];
+                this.mx=random(-2,2);
+                this.my=random(-2,2);
+            },
+            draw:function(){
+               canCon.beginPath();
+               canCon.fillStyle=this.color;
+               canCon.arc(this.x,this.y,this.r,0,Math.PI*2);
+               canCon.fill();
+            },
+            move:function(){
+                this.x+=this.mx;
+                this.y+=this.my;
+                if(this.x-this.r<0||this.x+this.r>w){
+                    this.mx=-this.mx;
+                }
+                if(this.y-this.r<0||this.y+this.r>h){
+                    this.my=-this.my;
+                }
+                this.draw();
+            }
+          }
+          function create(num){
+            for(var i=0;i<num;i++){
+                 var bubble=new Bubble();
+                 bubble.init();
+                 bubble.draw();
+                 aBubble.push(bubble);
+                }
+            }
+      create(666);
+      setInterval(function(){
+        canCon.clearRect(0,0,w,h);
+         for(var item of aBubble){
+            console.log(item);
+            item.move();
+         }
+      },1000/60);
+      </script>
+</body>
+</html>

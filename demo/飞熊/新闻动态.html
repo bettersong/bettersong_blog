@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新闻动态</title>
+<style>
+body{
+	margin:0px;
+	padding:0px;
+	}
+header{
+	height:315px;
+	background:url(images/snow-bg.png)0px 0px,url(images/header-bg.png);
+	-webkit-animation:go 60s linear infinite;/*动画样式*/
+	}
+section{
+	position:relative;/*相对定位*/
+	height:315px;
+	background:url(images/con-bg.png) repeat-x 0 210px;/*取消y轴重复*/
+	}
+@-webkit-keyframes go{/*定义一个动画帧(规则)*/
+		0%{background-position-y:0px,0}
+		100%{background-position-y:800px,0}
+	}
+@keyframes play{
+	0%{transform:translate(0,-315px);}
+	100%{transform:translate(0,0px);}
+	}
+tree,ice{
+	position:absolute;
+	display:block;
+	-webkit-animation:play 1s;
+	}
+tree{
+	width:112px;
+	height:137px;
+	background:url(images/tree.png);
+	}
+ice{left:580px;
+	top:170px;
+	width:115px;
+	height:103px;
+	background:url(images/ice.png);
+	}
+tree:nth-child(1){
+	left:35px;
+	top:140px;
+	-webkit-animation-duration:.5s;
+	}
+tree:nth-child(2){
+	left:200px;
+	top:180px;
+	-webkit-animation-duration:.8s;
+	}
+tree:nth-child(3){
+	left:390px;
+	top:125px;
+	-webkit-animation-duration:1.1s;
+	}
+tree:nth-child(4){
+	left:740px;
+	top:169px;
+	-webkit-animation-duration:1.4s;
+	}
+tree:nth-child(5){
+	left:960px;
+	top:130px;
+	-webkit-animation-duration:1.7s;
+	}
+tree:nth-child(6){
+	left:1200px;
+	top:155px;
+	-webkit-animation-duration:2s;
+	}
+pic{float:left;
+	display:block;
+	width:220px;
+	height:270px;
+	/*margin:5px auto;*/
+	}
+.left{
+	float:left;
+	width:560px;
+	height:270px;
+	background:#000;
+	}
+.right{
+	float:right;
+	width:560px;
+	height:270px;
+	background:#000;
+	}
+.bottom{
+	height:320px;
+	background:#000;
+	}
+pic img{
+	text-align:center;
+	}
+</style>
+</head>
+<body>
+    <header>
+         <section>
+          <tree></tree> 
+          <tree></tree> 
+          <tree></tree> 
+          <tree></tree> 
+          <tree></tree> 
+          <tree></tree> 
+          <ice></ice> 
+         </section>
+    </header>
+<div class="bottom">
+    <div class="left"></div>
+    <pic><img src="images/闪耀魔法星星瓶.gif" width="220px";height="270px"; /></pic>
+    <div class="right"></div>
+   
+</div>
+</body>
+</html>

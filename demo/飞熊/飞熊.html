@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>飞熊主题创意有限公司</title>
+<meta name="keywords" content="飞熊,游乐公司,设计公司" />
+<meta name="description" content="飞熊是一家集主题游乐场设计规划施工、主题乐园半功能装饰产品配套研发与销售于一体的优秀企业，自成立以来，始终致力于主题乐园的规划设计，助力广大客户解决游乐场经营难题——游乐氛围欠缺。游乐氛围与乐园内部的装饰布置紧密相关，飞熊一直在不断地探索，不断地学习和积累，力求为客户提供与众不同的乐园主题和定位方案，使所打造的乐园富含特色、别树一帜，一方面能够大大增强其竞争力，同时也能带给消费者前所未有的游玩体验。" />
+<style type="text/css">
+body{
+       margin: 0px;
+       padding: 0px;
+	   perspective:800px;
+       }
+a{
+	text-decoration: none;
+	font-size: 18px;
+}
+a:hover{
+	text-decoration: underline;
+	color: #F00;
+}
+.il {
+	text-align: left;
+}
+.dh{
+  position: absolute;
+  top:15px;
+}
+#lunbotu {
+          width: 1226px;
+          height: 460px;
+          overflow: hidden;
+          position: relative;
+          margin: 0px auto;
+          position: relative;
+          }
+#banner {
+          height: 460px;
+          width: 6130px;
+          position: absolute;
+          transition: 2s;
+          left: 0px;
+         }
+#banner img {
+             float: left;
+            }
+#biao {
+       position: absolute;
+       top: 430px;
+       left: 43%;
+       }
+#biao_1 {
+         height: 20px;
+         width: 20px;
+         border: 1px solid #000;
+         z-index: 10;
+         float: left;
+         list-style: none;
+         border-radius: 50%;
+         margin-left: 20px;
+         text-align: center;
+         cursor:pointer;
+         }
+.div1{
+	  margin-top:0px;
+      background-color:#f3fbfd;
+	  }
+.div2{height:50px;}
+.mid{
+	background:url(images/69.jpg) no-repeat center/100% 100%;
+	margin-bottom:0px;
+	}
+.div3{
+	  margin-top:22px;
+      margin-bottom:10px;
+	  float:left;
+	  }
+.div4{
+	  margin-top:22px;
+      margin-bottom:10px;
+	  margin-right:140px;
+	  float:left;
+	  }
+.div5{
+	  height:10px;
+	  margin-top:20px;
+	  margin-bottom:20px;
+	  float:left;
+	  }
+.div6{
+	  margin-top:22px;
+	  margin-bottom:10px;
+	  margin-left:180px;
+	  float:left;
+	  }
+.div7{
+	  margin-top:22px;
+	  margin-bottom:10px;
+	  float:right;
+	  }
+.div8{
+	  border:1px solid;
+	  margin-top:20px;
+}
+.div9{
+	width:100%;
+	height:130px;
+	margin-top:0px;
+	margin-bottom:0;
+	box-shadow:0 2px 9px #CCC;
+	z-index:999;
+}
+#bottomnav{
+	width:100%;
+	height:100px;
+	background:#3d3d3d;
+	text-align:center;
+	margin-top:40px;
+	color:#999;
+	}
+#bottomnav a:-webkit-any-link{
+	color:#FFF;
+	}
+#bottomnav a:hover{
+	color:#0FF;
+	text-decoration:underline;
+	}
+.p1{ float:left; margin-right:20px;}
+.p3{margin-left:10px;}
+.ys01 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	text-align: center;
+}
+.i1 {
+	color: #000;
+}
+.left{
+	float:left;
+	width:96px;
+	height:120px;
+	margin-right:500px;
+	margin-top:200px;
+	}
+.right{
+	float:right;
+	width:96px;
+	height:120px;
+	margin-top:200px;
+	}
+.box1{
+	height:500px;
+	}
+.box{float:left;
+	 position:relative;
+	 width:155px;
+     height:360px;
+	 /*background-color:#CCC;*/
+	 margin:50px auto;
+	 }
+.box ul{
+	transform-style:preserve-3d;/*3D视图*/
+	list-style:none;
+}
+.box ul li{
+	position:absolute;
+	left:0;top:0;
+	width:155px;
+	height:360px;
+	background:url(images/bg.jpg);
+	transform-origin:bottom;/*变换基点：底边中点*/
+	border-radius:13px;
+    transition:.7s;
+	border-shadow:0px 0px 20px 0px #000;/*阴影属性：水平位移 竖直位移 模糊半径  颜色*/
+}
+.box ul li:nth-child(1){/*选择到第一个子级*/
+	transform:translateZ(0px)rotate(-45deg);/*变换属性*/	
+}
+.box ul li:nth-child(1):hover{
+	transform:translateZ(100px)rotate(-45deg);
+	}
+.box ul li:nth-child(2){/*选择到第2个子级*/
+	transform:translateZ(10px)rotate(-22.5deg);/*变换属性*/	
+}
+.box ul li:nth-child(2):hover{/*选择到第2个子级*/
+	transform:translateZ(100px)rotate(-22.5deg);/*变换属性*/	
+}
+.box ul li:nth-child(3){/*选择到第2个子级*/
+	transform:translateZ(20px);}
+.box ul li:nth-child(3):hover{/*选择到第2个子级*/
+	transform:translateZ(100px);}
+.box ul li:nth-child(4){/*选择到第4个子级*/
+	transform:translateZ(10px)rotate(22.5deg);/*变换属性*/	
+}
+.box ul li:nth-child(4):hover{/*选择到第4个子级*/
+	transform:translateZ(100px)rotate(22.5deg);/*变换属性*/	
+}
+.box ul li:nth-child(5){/*选择到第5个子级*/
+	transform:translateZ(0px)rotate(45deg);/*变换属性*/	
+}
+.box ul li:nth-child(5):hover{/*选择到第4个子级*/
+	transform:translateZ(100px)rotate(45deg);/*变换属性*/	
+}
+.box ul li h3{
+	color:#d6d1d1;
+	font-size:30px;/*设置字体大小*/
+	text-align:center;
+	line-height:25px;/*一行文字所占高*/
+	text-shadow:3px 3px 3px #000;/*阴影属性：水平位移 竖直位移 模糊半径  颜色*/
+	}
+.box ul li img{
+	width:140px;
+	height:140px;
+	background-color:#eee;
+	border:1px solid #ccc;/*设置边框*/
+	border-radius:10px;
+	margin-left:6px;
+	}
+.box ul li p{
+	color:#3b20a2;
+	font-weight:600;/*文字加粗*/
+	line-height:25px;
+	margin-left:6px;
+	}
+.div10{
+	width:840px;
+	height:200px;
+	margin-left:10px;
+	margin-top:40px;
+	}
+.div10 ul{
+	display:flex;
+	justify-content:space-between;
+	list-style:none;
+	}
+.div10 ul li{
+	width:230px;
+	height:200px;
+	background-color:#e99f0c;
+	border-radius:10px;
+	box-shadow:1px 10px 5px #00F;
+	}
+h3{
+	width:155px;
+	margin:10px auto;
+	background-color:#FFF;
+	color:#e99f0c;
+	font-size:30px;
+	}
+.div10 ul li p{
+	padding:10px;
+	font-size:20px;
+	color:#FFF;
+	text-shadow:0 0 6px #FFF;
+	}
+.div11{
+	width:360px;
+	height:200px;
+	float:right;
+	border-radius:10px;
+	background:url(images/psb.jpg) no-repeat -30px;
+	margin-top:-200px;
+	margin-right:50px;
+	box-shadow:1px 10px 5px #000;
+	transition:.5s;
+	}
+.div11:hover{
+	background:url(images/psb.jpg) no-repeat 0;
+	}
+.div11 p{
+	width:90px;
+	background:rgba(0,0,0,0.3);
+	margin:210px 0 0 20px;
+	text-align:center;
+	text-shadow:0 0 9px #fff;
+	font-size:20px;
+	color:#fff;
+	transition:.3s;
+	opacity:0;
+	}
+.div11:hover p{
+	margin-top:170px;
+	opacity:1;
+	}
+.div12{
+	width:360px;
+	height:200px;
+	float:left;
+	border-radius:10px;
+	background:url(images/psb1.jpg) no-repeat -30px;
+	margin:60px 40px 0 50px;
+	box-shadow:1px 10px 5px #000;
+	transition:.5s;
+	}
+.div12:hover{
+	background:url(images/psb1.jpg) no-repeat 0;
+	}
+.div12 p{
+	width:90px;
+	background:rgba(0,0,0,0.3);
+	margin:210px 0 0 20px;
+	text-align:center;
+	text-shadow:0 0 9px #fff;
+	font-size:20px;
+	color:#fff;
+	transition:.3s;
+	opacity:0;
+	}
+.div12:hover p{
+	margin-top:170px;
+	opacity:1;
+	}
+.div13{
+	width:840px;
+	height:200px;
+	float:right;
+	margin-right:50px;
+	margin-top:50px;
+	margin-bottom:10px;
+	}
+.div13 ul{
+	display:flex;
+	justify-content:space-between;
+	list-style:none;
+	}
+.div13 ul li{
+	width:230px;
+	height:200px;
+	background-color:#e99f0c;
+	border-radius:10px;
+	box-shadow:1px 10px 5px #00F;
+	}
+.div13 ul li p{
+	padding:10px;
+	font-size:20px;
+	color:#FFF;
+	text-shadow:0 0 6px #FFF;
+	}
+</style>
+<script>/*** 使ie浏览器支持html5标签*/(function () {/*** HTML5 标签名* @type {string}*/var nodeNames = 'abbr|article|aside|audio|bdi|canvas|data|datalist|'+ 'details|dialog|figcaption|figure|footer|header|hgroup|main|'+ 'mark|meter|nav|output|picture|progress|section|summary|template|time|video';var list = nodeNames.split('|');while (list.length) {document.createElement(list.pop());}})();</script>
+</head>
+<body leftmargin="0" topmargin="0">
+<div class="div9">
+      <marquee direction=left scrollamount=3 onmouseover="this.stop()" onmouseout="this.start()">
+        <strong>最新公告:</strong><span style="color:#00F">欢迎光临飞熊主题创意有限公司！</span>
+      </marquee>
+ <!-- <table background="images/4a.gif" width="1300" height="99" border="0" align="center">
+  <tr>
+        <td width="7%" height="40">&nbsp;</td>
+        <td width="20%" rowspan="2"><img src="images/1.png" name="q1" width="260" height="90" id="q1" /></td>
+        <td width="8%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="56%" colspan="2"><img src="images/未标题-2_看图王.jpg" width="500" height="30" /></td>
+    </tr>
+      <tr>
+        <td height="53">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="3"><table width="84%" border="0">
+          <tr>
+            <div class="header">                                             <div class="news-nav">
+            <div class="container">
+            <div class="nav-bar">
+            <div class="dh">
+            <td width="20%" height="47" align="center" valign="middle" class="i1"><a href="" class="i1"><strong>首页</strong></a><strong>
+              </li>
+            </strong></td>
+            <span class="dropdown">
+            <div class="dh"> <td width="20%" align="center" valign="middle"><a href="作品展示.html" target="_new" class="i1"><strong>作品展示</strong></a></td></div>
+            <span class="caret"></span>
+            <div class="dropdown-menu">
+            <td width="20%" align="center" valign="middle"><a href="新闻动态.html" target="_new" class="i1"><strong>新闻动态</strong></td>
+            <td width="20%" align="center" valign="middle"><a href="公司简介.html" target="_new" class="i1"><strong>公司简介</strong></a></td>
+            <td width="20%" align="center" valign="middle"><a href="联系我们.html" target="_new" class="i1"><strong>联系我们</strong></a></td>
+          </tr>
+          </table></td>
+      </tr>
+  </table>
+</div>
+<div class="div1">
+  <center>
+<br />
+</center>
+<table width="1300" border="0" align="center">
+<tr>
+      <td height="22" colspan="2" align="center" valign="middle" background="images/8625435_56_看图王.jpg"><a href="http://www.cndesign.com/domestic/" target="_new">国内资讯</a></td>
+      <td height="22" colspan="2" align="center" valign="middle" background="images/8625435_52_看图王.jpg"><a href="http://www.cndesign.com/world/" target="_new">国际资讯</a></td>
+      <td height="22" colspan="2" align="center" valign="middle" background="images/8625435_56_看图王.jpg"><a href="http://www.cndesign.com/activity/" target="_new">活动展览</a></td>
+      <td height="22" colspan="2" align="center" valign="middle" background="images/8625435_52_看图王.jpg"><a href="http://www.cndesign.com/interview/" target="_new">人物访谈</a></td>
+      <td height="22" colspan="2" align="center" valign="middle" background="images/8625435_56_看图王.jpg"><a href="http://www.cndesign.com/trend/" target="_new">行业聚焦</a></td>
+  </tr>
+    <tr>
+      <td width="117">&nbsp;</td>
+      <td width="129">&nbsp;</td>
+      <td width="118">&nbsp;</td>
+      <td width="134">&nbsp;</td>
+      <td width="130">&nbsp;</td>
+      <td width="139">&nbsp;</td>
+      <td width="106">&nbsp;</td>
+      <td width="147">&nbsp;</td>
+      <td width="120">&nbsp;</td>
+      <td width="118">&nbsp;</td>
+    </tr>
+</table>
+<table width="1300" border="0" align="center">
+    <tr>
+      <td width="360" height="383"><table width="100%" border="1">
+      
+        <tr>
+          <td background="images/8625435_67_看图王.jpg" height="29" align="center" valign="middle">信息栏</td>
+        </tr>
+        <tr>
+          <td height="349">&nbsp;</td>
+        </tr>
+      </table></td>
+      <td width="560" height="390" align="center" valign="middle"><table>
+      <script> 
+var widths=560; //图片宽 
+var heights=390;//高 
+var counts=5;//图片数量 
+img1=new Image ();img1.src='images/7.jpg'; //图片的位置 
+img2=new Image ();img2.src='images/４３５４３５３ (4).jpg'; 
+img3=new Image ();img3.src='images/mmexport1508155390429.jpg'; 
+img4=new Image ();img4.src='images/mmexport1508155393986.jpg';
+img5=new Image ();img5.src='images/mmexport1508155398365.jpg';
+url1=new Image ();url1.src='#';//图片链接地址 
+url2=new Image ();url2.src='#'; 
+url3=new Image ();url3.src='#'; 
+url4=new Image ();url4.src='#';
+url5=new Image ();url5.src='#'; 
+var nn=1; 
+var key=0; 
+function change_img() 
+{if(key==0){key=1;} 
+else if(document.all) 
+{document.getElementById("pic").filters[0].Apply();document.getElementById("pic").filters[0].Play(duration=2);} 
+eval('document.getElementById("pic").src=img'+nn+'.src'); 
+eval('document.getElementById("url").href=url'+nn+'.src'); 
+for (var i=1;i<=counts;i++){document.getElementById("xxjdjj"+i).className='axx';} 
+document.getElementById("xxjdjj"+nn).className='bxx'; 
+nn++;if(nn>counts){nn=1;} 
+tt=setTimeout('change_img()',4000);} //图片过渡时间长度 
+function changeimg(n){nn=n;window.clearInterval(tt);change_img();} 
+document.write('<style>'); 
+document.write('.axx{padding:1px 7px;border-left:#cccccc 1px solid;}'); 
+document.write('a.axx:link,a.axx:visited{text-decoration:none;color:#fff;line-height:12px;font:9px sans-serif;background-color:#666;}'); 
+document.write('a.axx:active,a.axx:hover{text-decoration:none;color:#fff;line-height:12px;font:9px sans-serif;background-color:#999;}'); 
+document.write('.bxx{padding:1px 7px;border-left:#cccccc 1px solid;}'); 
+document.write('a.bxx:link,a.bxx:visited{text-decoration:none;color:#fff;line-height:12px;font:9px sans-serif;background-color:#D34600;}'); 
+document.write('a.bxx:active,a.bxx:hover{text-decoration:none;color:#fff;line-height:12px;font:9px sans-serif;background-color:#D34600;}'); 
+document.write('</style>'); 
+document.write('<div style="width:'+widths+'px;height:'+heights+'px;overflow:hidden;text-overflow:clip;">'); 
+document.write('<div><a id="url"><img id="pic" style="border:0px;filter:progid:dximagetransform.microsoft.wipe(gradientsize=1.0,wipestyle=4, motion=forward)" width='+widths+' height='+heights+' /></a></div>'); 
+document.write('<div style="filter:alpha(style=1,opacity=10,finishOpacity=80); width:100%-2px;text-align:right;top:-12px;position:relative;margin:1px;height:12px;padding:0px;margin:0px;border:0px;">'); 
+for(var i=1;i<counts+1;i++)
+{document.write('<a href="javascript:changeimg('+i+');"id="xxjdjj'+i+'" class="axx" target="_self">'+i+'</a>');} 
+document.write('</div></div>'); change_img();
+</script>
+        <tbody>
+          <tr>
+          </tr>
+        </tbody>
+      </table></td>
+      <td width="360"><table width="100%" border="1">
+        <tr>
+          <td background="images/8625435_67_看图王.jpg" height="29" align="center" valign="middle">信息栏</td>
+        </tr>
+        <tr>
+          <td height="349">&nbsp;</td>
+        </tr>
+      </table></td>
+    </tr>
+</table>
+<br />-->
+<span class="item_hide">
+	<div class="js-complaintPageContent"><div class='reset_style js-reset_style'><p style="text-align: center;">
+	<span style="font-size:32px;letter-spacing: 3px;">建<span style="color:#ff0000;">超级乐园</span>&nbsp;做<span style="color:#ff0000;">大娱乐家</span></span></p>
+<div class="div2">
+   <div class="div3"><hr size=2 align=left width="300px" /></div><div class="div4"><img src="images/W020151022651589522563.gif"width="20" height="20" /></div>
+   <p  style="text-align: center;    font-size: 14px;" class="div5">&nbsp;&nbsp;&nbsp;梦想，是一群有意思的人，共同来做一件有意义的事</p>
+   <div class="div7"><hr size=2 align=right width="320px" /> </div> 
+   <div class="div6"><img src="images/W020151022651589522563.gif" width="20" height="20" /></div>
+<div style="clear:both"></div>
+</div>
+</div></div>
+</span></div>
+<div class="mid">
+<div class="box1">
+<div class="left"><img src="images/5.jpg" /></div>
+<div class="box">
+    <ul>
+        <li>
+        <h3>CARD1</h3>
+            <img src="images/mmexport1508155398365.jpg" width:140px;height:140px;/>
+            <p>Dog lives in a dog hut and loves to chew shoes</p>
+        </li>
+        <li>
+        <h3>CARD2</h3>
+            <img src="images/mmexport1508155390429.jpg" width:140px;height:140px;/>
+            <p>Dog lives in a dog hut and loves to chew shoes</p>
+        </li>
+        <li>
+        <h3>CARD3</h3>
+            <img src="images/02_看图王.jpg" width:140px;height:140px; />
+            <p>Dog lives in a dog hut and loves to chew shoes</p>
+        </li>
+        <li>
+        <h3>CARD4</h3>
+            <img src="images/４３５４３５３ (4).jpg" width:140px;height:140px; />
+            <p>Dog lives in a dog hut and loves to chew shoes</p>
+        </li>
+        <li>
+        <h3>CARD5</h3>
+            <img src="images/17_看图王.jpg" width:140px;height:140px; />
+            <p>Dog lives in a dog hut and loves to chew shoes</p>
+        </li>
+    </ul>
+</div>
+<div class="right"><img src="images/5.jpg" /></div>
+</div>
+<div class="div10">
+<ul>
+    <li>
+    <h3>超群的实力</h3>
+    <p>叱咤儿童乐园市场近十年，积累了丰富的运营经验。</p>
+    </li>
+    <li>
+    <h3>专业的团队</h3>
+    <p>拥有国内专业的研发团队，出色的项目运营团队和上千名市场调研人员。</p>
+    </li>
+    <li>
+    <h3>先进的设计</h3>
+    <p>精英团队始终以市场为导向，融合先进设计理念，不断开发出满足儿童和家长需求的游乐设施和精彩活动。</p>
+    </li>
+</ul>
+</div>
+<div class="div11"><p>飞熊展厅</p></div>
+<div class="div12"><p>飞熊展厅</p></div>
+<div class="div13">
+<ul>
+    <li>
+    <h3>科学的理念</h3>
+    <p>激发孩子想象力,创造力，启迪智慧,提升情商，培养适应力,社交能力是飞熊一贯的理念。</p>
+    </li>
+    <li>
+    <h3>新颖的设备</h3>
+    <p>引进欧洲先进的游乐设备，吸收世界先进设计理念，打造欢乐的童年体验和寓教于乐的娱乐世界。</p>
+    </li>
+    <li>
+    <h3>优质的服务</h3>
+    <p>飞熊为孩子提供先进的娱乐体验，为家长带来更科学的育儿常识，用爱呵护孩子成长每一步。</p>
+    </li>
+</ul>
+</div>
+<div style="clear:both"></div>
+</div>
+<div id="bottomnav">
+<a href=#>飞熊网</a> | 
+<a href="公司简介.html">公司</a> | 
+<a href="//www.11467.com/dir.html">黄页</a> | 
+<a href="作品展示.html">产品</a> | 
+<a href="联系我们.html">资讯</a> | 
+<div>免责声明：本站信息由企业注册和来自工商局网站，本站完全免费，交易请核实资质，谨防诈骗 &nbsp;&nbsp;<a href="//www.11467.com/html/law.htm" title="法律声明" rel="nofollow">法律声明</a>&nbsp;&nbsp;<a href="联系我们.html" rel="nofollow">联系飞熊网</a>  
+</div>
+&copy; 11467.com 飞熊网版权所有  发布批发采购信息、查询企业黄页，上飞熊网 <br/> 
+地址：中国·中山 滨江区江南大道288号康恩贝大厦A座6F
+</div>
+</body>
+</html>

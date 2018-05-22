@@ -1,0 +1,224 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"><!--字符编码:utf-8国际编码-->
+		<meta name="Keywords" content="关键词1,关键词2">
+		<meta name="Description" content="描述">
+		<title>音乐播放器-宋瑶</title>
+		<style>/*css样式*/
+			*{/* 通配符:选择到所有的标签元素*/
+				margin:0;
+				padding:0;
+			}
+			#phone{
+				width:320px;
+				height:600px;
+				background:#000;
+				margin:30px auto;
+			}
+			.top{
+				width:320px;
+				height:23px;
+				background:url("images/1.png");
+			}
+			.title{
+				width:320px;
+				height:30px;
+				background:url("images/2.png");
+				color:#ccc;
+				font-size:20px;
+				text-align:center;
+			}
+			.singer{
+				width:320px;
+				height:20px;
+				color:#ccc;
+				text-align:center;
+			}
+			.play{
+				width:190px;
+				height:190px;
+				background:url("images/3.png");
+				margin:20px auto;
+				border-radius:50%;
+			}
+			.rotate{
+				/*css3自定义动画:动画的名称 时间 匀速 无限重复*/
+				animation:rot 10s linear infinite;
+			}
+			/*css3动画帧*/
+			@keyframes rot{
+				from{transform:rotate(0deg);/*css3变换：旋转*/}
+				to{transform:rotate(360deg)}
+			}
+			.lrc{
+				width:300px;
+				height:280px;
+				margin:auto;
+				color:#ccc;
+				text-align:center;
+				font-size:14px;
+				line-height:20px;/*行高*/
+				overflow:hidden;/*超出隐藏*/
+			}
+			#content{
+				position:relative;
+				top:0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="phone">
+			<div class="top"></div>
+			<div class="title">小幸运</div>
+			<div class="singer">谭嘉仪</div>
+			<div class="play" id="play"></div>
+			<div class="lrc">
+				<div id="content"></div>
+			</div>
+			<audio src="music/谭嘉仪-小幸运.mp3" id="music"></audio>
+		</div>
+		<textarea id="text" style="display:none">
+			[ver:v1.0]
+			[ti:2]
+			[00:00.64]小幸运 - 谭嘉仪
+			[00:02.15]词：徐世珍&吴辉福
+			[00:03.70]曲：JerryC
+			[00:04.14]编曲：JerryC
+			[00:13.77]我听见雨滴落在青青草地
+			[00:19.89]我听见远方下课钟声响起
+			[00:25.74]可是我没有听见你的声音
+			[00:30.74]认真 呼唤我姓名
+			[00:37.92]爱上你的时候还不懂感情
+			[00:44.12]离别了才觉得刻骨 铭心
+			[00:50.09]为什么没有发现遇见了你
+			[00:54.70]是生命最好的事情
+			[01:00.30]也许当时忙着微笑和哭泣
+			[01:06.36]忙着追逐天空中的流星
+			[01:12.12]人理所当然的忘记
+			[01:16.55]是谁风里雨里一直默默守护在原地
+			[01:24.44]原来你是我最想留住的幸运
+			[01:29.69]原来我们和爱情曾经靠得那么近
+			[01:35.67]那为我对抗世界的决定
+			[01:40.29]那陪我淋的雨
+			[01:43.28]一幕幕都是你 一尘不染的真心
+			[01:50.60]与你相遇 好幸运
+			[01:53.96]可我已失去为你泪流满面的权利
+			[01:59.98]但愿在我看不到的天际
+			[02:04.63]你张开了双翼
+			[02:07.68]遇见你的注定 她会有多幸运
+			[02:27.28]青春是段跌跌撞撞的旅行
+			[02:33.44]拥有着后知后觉的美丽
+			[02:39.55]来不及感谢是你给我勇气
+			[02:44.22]让我能做回我自己
+			[02:49.72]也许当时忙着微笑和哭泣
+			[02:55.55]忙着追逐天空中的流星
+			[03:01.61]人理所当然的忘记
+			[03:06.03]是谁风里雨里一直默默守护在原地
+			[03:13.79]原来你是我最想留住的幸运
+			[03:19.05]原来我们和爱情曾经靠得那么近
+			[03:25.17]那为我对抗世界的决定
+			[03:29.68]那陪我淋的雨
+			[03:32.56]一幕幕都是你 一尘不染的真心
+			[03:39.89]与你相遇 好幸运
+			[03:43.40]可我已失去为你泪流满面的权利
+			[03:49.32]但愿在我看不到的天际
+			[03:53.97]你张开了双翼
+			[03:56.98]遇见你的注定
+			[04:00.47]Oh 她会有多幸运
+		</textarea>
+		<script>
+			//获取音频标签
+			/*
+				var oMusic 自定义一个变量来存储元素
+				//在document文档下面By通过id名get获取Element元素
+				document.getElementById("music")
+			*/
+			var oMusic = document.getElementById("music");
+			var oPlay = document.getElementById("play");
+			var oText = document.getElementById("text");
+			var oCon= document.getElementById("content");
+			//点击play按钮实现什么功能
+			var mark = true;//音乐的播放状态
+			oPlay.onclick = function(){
+				if (mark)//如果mark =true就执行里面的代码
+				{
+					//播放音乐
+					oMusic.play();
+					//mark = false;
+					//添加旋转动画 this谁用指代谁 this => oPlay
+					this.className = "play rotate";
+				}else{
+					oMusic.pause();//暂停播放
+					//mark = true;
+					this.className = "play";
+				}
+				mark = !mark;//mark取反
+			}
+
+			var html = '';//定义一个空字符串用来存储歌词文档
+			//获取歌词
+			var text = oText.value.split("[");//获取歌词并从 [ 地方分隔开
+			//console.log(text);//在控制台输出
+			for (var i=0;i<text.length ;i++ )
+			{
+				//把每一句歌词从]处分割开
+				var lrc = text[i].split("]");
+				//console.log(lrc[0])//时间
+				var times = lrc[0].split(".");//切割掉时间的毫秒
+				//console.log(times[0])//时间
+				var time = times[0].split(":");
+				//console.log(time)
+				var curtime = time[0]*60 + time[1]*1;
+				//console.log(curtime)
+				if (lrc[1])
+				{
+					//把每一句歌词放到p标签里面
+					html += "<p id="+curtime+">"+lrc[1]+"</p>";
+				}
+				//把获取到的歌词添加到存放给出的标签里面
+				oCon.innerHTML = html;
+			}
+
+			//歌词同步
+			var aP = oCon.getElementsByTagName("p");
+			var n = 0;
+			//监听音乐播放的时间进度
+			oMusic.addEventListener("timeupdate",function(){
+				//console.log(parseInt(this.currentTime));//输出音乐的当前时间
+				var crt = parseInt(this.currentTime);
+
+				//如果存在id名为当前时间的p 就同步上了
+				if (document.getElementById(crt))
+				{
+					//先把所有的都改为原来的颜色
+					for (var i=0;i<aP.length ;i++ )
+					{
+						aP[i].style.color = "#ccc";
+						aP[i].style.fontSize = "14px";
+					}
+					//把同步成功的歌词改为红色
+					document.getElementById(crt).style.color = "red";
+					document.getElementById(crt).style.fontSize = "18px";
+					if (aP[7+n] && aP[7+n].id == crt)
+					{
+						oCon.style.top = -20*n + "px";
+						n++;
+					}
+				}
+			});
+
+			//监听歌曲是否播放完成
+			oMusic.addEventListener("ended",function(){
+				//停止旋转
+				oPlay.className = "play";
+				//歌词内容恢复原位置
+				oCon.style.top = 0;
+				//当前时间改为0
+				this.currentTime = 0;
+				//再次点击能够播放
+				mark = true;
+			});
+		</script>
+	</body>
+</html>

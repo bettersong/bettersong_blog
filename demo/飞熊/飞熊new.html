@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>飞熊</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="header">
+      <marquee direction=left scrollamount=3 onmouseover="this.stop()" onmouseout="this.start()">
+      <strong>最新公告:</strong><span style="color:#00F"><a name="key">欢迎光临飞熊主题创意有限公司！</a></span>
+      </marquee>
+<div class="header-img"><img src="images/1.png" /></div>
+<div class="header-no"><img src="images/未标题-2_看图王.jpg" width="500" height="30" /></div>
+<div class="header-list">
+<ul>
+    <li><a href="#">首页</a></li>
+    <li><a href="#link">资讯</a></li>
+    <li><a href="作品展示.html" target="_new">作品展示</a></li>
+    <li><a href="#news">新闻动态</a></li>
+    <li><a href="公司简介.html" target="_new">公司简介</a></li>
+    <li><a href="联系我们.html" target="_new">联系我们</a></li>
+</ul>
+</div>
+</div>
+<div id="content"> <!-- 总的父容器 -->
+<div class="carousel-inner"> <!-- 包含图片的容器 -->
+<div class="item "><img src="images/02_看图王.jpg" width="760" height="330" alt="第一张图片"></div>
+<div class="item"><img src="images/mmexport1508155398365.jpg" width="760" height="330" alt="第二张图片"></div>
+<div class="item"><img src="images/17_看图王.jpg" width="760" height="330" alt="第三张图片"></div>
+<div class="item"><img src="images/４３５４３５３ (4).jpg" width="760" height="330" alt="第四张图片"></div>
+<div class="item"><img src="images/５６４５６４５ (7)_看图王.jpg" width="760" height="330" alt="第五张图片"></div>
+</div>
+<!-- 图片下方的指示圆圈-->
+<ul class="carousel-indicators">
+<li id='pic1'>●</li>
+<li id='pic2'>●</li>
+<li id='pic3'>●</li>
+<li id='pic4'>●</li>
+<li id='pic5'>●</li>
+</ul>
+</div>
+<!--E banner-->
+<script>
+window.onload = function(){
+//轮播初始化
+var lunbo = document.getElementById('content');
+var imgs = lunbo.getElementsByTagName('img');
+var uls = lunbo.getElementsByTagName('ul');
+var lis = lunbo.getElementsByTagName('li');
+//初始状态下，一个圆圈为高亮模式
+lis[0].style.fontSize = '26px';
+lis[0].style.color = '#fff';
+//定义一个全局变量，用来进行自动轮播图片顺序的变化
+var pic_index = 1;
+//自动轮播.使用pic_time记录播放，可以随时使用clearInterval()清除掉。
+var pic_time = setInterval(autobofang,3000);
+//手动轮播
+for(var i=0;i<lis.length;i++){
+lis[i].addEventListener("mouseover",change,false);
+}
+function change(event){
+var event=event||window.event;
+var target=event.target||event.srcElement;
+var children = target.parentNode.children;
+for(var i=0;i<children.length;i++){
+if(target == children[i]){
+picChange(i);
+}
+}
+}
+//图片切换函数
+function picChange(i){
+//让所有图片都不显示，所有圆圈都为普通样式
+for(var j=0;j<imgs.length;j++){
+imgs[j].style.display = 'none'; lis[j].style.fontSize = '24px';
+lis[j].style.color = '#999';
+}
+//让选中的索引的图片显示，对应的圆圈高亮
+imgs[i].style.display = 'block';
+lis[i].style.fontSize = '26px';
+lis[i].style.color = '#fff';
+}
+//自动播放的事件处理
+function autobofang(){
+if(pic_index >= lis.length){
+pic_index = 0;
+}
+change1(pic_index);
+pic_index++;
+}
+//自动播放的图片转化中的事件
+function change1(index){
+picChange(index);
+//鼠标移入ul标签，自动播放图片暂停
+uls[0].addEventListener("mouseover",pause,false);
+//鼠标移出ul标签，自动播放图片继续
+uls[0].addEventListener("mouseout",go,false);
+}
+//自动播放暂停函数
+function pause(event){
+var event=event||window.event;
+var target=event.target||event.srcElement;
+switch(target.id){
+case "pic1":
+clearInterval(pic_time);
+break;
+case "pic2":
+clearInterval(pic_time);
+break;
+case "pic3":
+clearInterval(pic_time);
+break;
+case "pic4":
+clearInterval(pic_time);
+break;
+}
+}
+//自动播放图片继续函数
+function go(event){
+var event=event||window.event;
+var target=event.target||event.srcElement;
+switch(target.id){
+case "pic1":
+pic_index = 1;
+pic_time = setInterval(autobofang,3000);
+break;
+case "pic2":
+pic_index = 2;
+pic_time = setInterval(autobofang,3000);
+break;
+case "pic3":
+pic_index = 3;
+pic_time = setInterval(autobofang,3000);
+break;
+case "pic4":
+pic_index = 4;
+pic_time = setInterval(autobofang,3000);
+break;
+}
+}
+}
+</script>
+<div class="navbr">
+<ul>
+    <li>
+    <img src="images/5d.gif"  />
+    <p>litter caesars新品牌设计</p>
+    </li>
+    <li>
+    <img src="images/ad.jpeg" />
+     <p>自由组合家居照明</p>
+    </li>
+    <li>
+    <img src="images/ed.jpeg" />
+     <p>纯白.玉兰插画欣赏</p>
+    </li>
+    <li>
+    <img src="images/ef.jpeg" />
+    <p>解语花以及仗剑走天涯上色了</p>
+    </li>
+    <li>
+    <img src="images/b0.png" />
+    <p>俄罗斯推出国家品牌logo</p>
+    </li>
+    <li>
+    <img src="images/e5.jpg" />
+    <p>可口可乐推出品牌定制字体</p>
+    </li>
+</ul>
+</div>
+<div class="nav-box">
+<h3><a name="link"></a>资讯</h3>
+<div class="nav-ul">
+<ul>
+    <li><a href=http://www.cndesign.com/domestic/ target="_new" >国内资讯</a></li>
+    <li><a href=http://www.cndesign.com/world/ target="_new" >国际资讯</a></li>
+    <li><a href=http://www.cndesign.com/activity/ target="_new" >活动展览</a></li>
+    <li><a href=http://www.cndesign.com/interview/ target="_new" >人物访谈</a></li>
+    <li><a href=http://www.cndesign.com/trend/ target="_new" >行业聚焦</a></li>
+    <li><a href=http://www.cndesign.com/original/ target="_new" >原创推荐</a></li>
+</ul>
+</div>
+</div>
+<div class="nav-mid">
+<ul>
+    <li><img src="images/f5.png" /></li>
+    <li>
+    <a href=http://www.cndesign.com/domestic/ target="_new" >国内资讯</a>
+    <p>|荔枝FM更名"荔枝"并发布全新logo</p>
+    <hr align="center" size=2 width="100%" />
+    <p1>荔枝FM创立于2013年，起初是一个网络电台但是在网络电台商业模式分化分别走向知识付费后，荔枝FM于2016年10月上线语音直播业务。</p1>
+    </li>
+    <li><img src="images/fa.png" /></li>
+    <li>
+    <a href=http://www.cndesign.com/domestic/ target="_new" >国内资讯</a>
+     <p>|2018年1月8日红旗汽车推出全新logo</p>
+     <hr align="center" size=2 width="100%" />
+     <p1>2018年1月8日，即将迎来出车60周年之际的红旗汽车品牌战略发布会将在北京人民大会堂举行</p1>
+    </li>
+    <li><img src="images/e4.jpeg" /></li>
+    <li>
+    <a href=http://www.cndesign.com/world/ target="_new" >国际资讯</a>
+    <p>|品牌理念：寻找我们逝去的青春</p>
+    <hr align="center" size=2 width="100%" />
+    <p1>图标释义：图标采取文字变形设计，抽象地表达出伙伴们一起的形象，与品牌理念"青春"有较强的关联性
+    </li>
+    <li><img src="images/6d.jpeg" /></li>
+    <li>
+    <a href=http://www.cndesign.com/world/ target="_new" >国际资讯</a>
+    <p>|牧场心语 酸奶系列包装设计</p>
+     <hr align="center" size=2 width="100%" />
+     <p1>"牧场心语"如何在这个全新的市场进行打造固有的品牌特性，让产品在众多的乳业品牌中脱颖而出占有一席之地，将优势的产品值提高。</p1>
+    </li>
+</ul>
+</div>
+<div class="nav-box">
+<h3>最新作品</h3>
+<div class="nav-ul">
+<ul>
+    <li><a href=http://www.doooor.com/forum-2-1.html target="_new" >平面</a></li>
+    <li><a href=http://www.doooor.com/forum-2-typeid19.html target="_new" >包装</a></li>
+    <li><a href=http://nc.a963.com/ target="_new" >室内</a></li>
+    <li><a href=http://www.doooor.com/forum-38-1.html target="_new" >网页</a></li>
+    <li><a href=http://www.doooor.com/forum-2-typeid20.html target="_new" >创意广告</a></li>
+    <li><a href=http://www.doooor.com/forum-39-1.html target="_new" >美术</a></li>
+</ul>
+</div>
+</div>
+<div class="nav-after">
+<ul>
+    <li>
+    <div class="nav-img"><img src="images/ce.jpg" /></div>
+    <div class="nav-pic"></div>
+    <h3>英伦主题游乐城</h3>
+    <p>飞熊设计</p>
+    <h2>原创</h2>
+    </li>
+    <li>
+    <div class="nav-img"><img src="images/H3.jpg" /></div>
+     <div class="nav-pic"></div>
+     <h3>DIY手工画桌</h3>
+     <p>飞熊设计</p>
+     <h2>原创</h2>
+    </li>
+    <li>
+    <div class="nav-img"><img src="images/H.jpg" /></div>
+     <div class="nav-pic"></div>
+     <h3>玻璃钢鹦鹉凳</h3>
+     <p>飞熊设计</p>
+     <h2>原创</h2>
+    </li>
+    <li>
+    <div class="nav-img"><img src="images/保罗章鱼哥鱼缸.png" /></div>
+     <div class="nav-pic"></div>
+     <h3>保罗章鱼哥鱼缸</h3>
+     <p>飞熊设计</p>
+     <h2>原创</h2>
+    </li>
+</ul>
+</div>
+<div class="nav-box">
+<h3><a name="news"></a>新闻动态</h3>
+</div>
+<div class="tab_bar">
+<div class="tab_bar-img"><img src="images/th.jpg" alt="logo" width="210" height="80"></div>
+                <ul>
+                    <li id="tab1" onclick="myclick(1)" style="background-color: rgba(0,0,0,0.3)">
+                        公司新闻
+                    </li>
+                    <li id="tab2" onclick="myclick(2)" >
+                        行业新闻
+                    </li>
+                    <li id="tab3" onclick="myclick(3)" >
+                        媒体报道
+                    </li>
+                </ul>
+            </div>
+            <div class="tab_css" id="tab1_content" style="display: block">
+                <h3>News show</h3>
+         <ul class="list">
+            <li><P1>飞熊游乐诚挚邀请您！</P1><p2>2017-10-18</p2></li>
+            <li><P1>迎中秋，祝飞熊同仁多安康；庆国庆，愿飞熊大地更辉煌</P1><p2>2017-09-30</p2></li>
+            <li><P1>告知函</P1><p2> 2017-09-15</p2></li>
+            <li><P1>前辈之精神 吾辈之楷模</P1><p2>2017-08-01</p2></li>
+            <li><P1>待到山花烂漫时，我在丛中笑</P1><p2> 2017-05-02</p2></li>
+            <li><P1>飞熊主题创意有限公司温馨提示</P1><p2> 2017-01-21</p2></li>
+            <li><P1>我公司举行新年酒会</P1><p2> 2017-01-20</p2></li>
+            <li><P1>2016广州电子游戏国际产业展GTI Asia China Expo 2016</P1><p2> 2016-09-05</p2></li>
+            <li><P1>中共永嘉县委娄绍光书记到公司考察指导工作</P1><p2>2016-08-24</p2></li>
+            <li><P1>中国玩具和婴童用品协会梁梅会长及王艳梅副秘书长莅临我司考察指导</P1><p2>2016-05-28</p2></li>
+        </ul>
+            </div>
+            <div class="tab_css" id="tab2_content" style="display: none">
+                      <h3>News show</h3>
+         <ul class="list">
+            <li><P1>游乐场设备在哪批发?哪里可以买到这些设备？</P1><p2>2017-11-08</p2></li>
+            <li><P1>适合庙会赶集用可移动小型海盗船新款推荐</P1><p2>2017-08-12</p2></li>
+            <li><P1>移动海盗船，经营游乐设备首选项目。</P1><p2>2017-08-05</p2></li>
+            <li><P1> 郑州市梦之龙游乐设备制造有限公司是专业海盗船游乐设备厂家</P1><p2>2017-08-01</p2></li>
+            <li><P1>我们的设备出厂前经过超负荷安全运转测试</P1><p2>2017-07-22</p2></li>
+            <li><P1>新颖 —— 外观细腻，5道打磨工序，3层以上喷漆工艺</P1><p2>2017-06-01</p2></li>
+            <li><P1>省心 —— 1年质保，终身保修，一个电话解决所有问题</P1><p2>2017-05-20</p2></li>
+            <li><P1>专业 —— 行内10以上工程师，为您的设备保驾护航</P1><p2>2016-12-15</p2></li>
+            <li><P1>不用担心投资大，不用担心场地不好找</P1><p2>2016-12-04</p2></li>
+            <li><P1>中国玩具和婴童用品协会梁梅会长及王艳梅副秘书长莅临我司考察指导</P1><p2>2016-05-28</p2></li>
+        </ul>
+            </div>
+            <div class="tab_css" id="tab3_content" style="display: none">
+                       <h3>News show</h3>
+         <ul class="list">
+            <li><P1>2017中国国际文化娱乐产业博览会即将开幕！</P1><p2>2017-10-18</p2></li>
+            <li><P1>VR与AR作为新兴领域，存在更多普通人难以看到的前景和机会。</P1><p2>2017-09-30</p2></li>
+            <li><P1>文化娱乐在"十三五"期间迎来一个全新的发展机遇。</P1><p2> 2017-09-15</p2></li>
+            <li><P1>树立正确价值导向、开发健康益智游戏</P1><p2>2017-08-01</p2></li>
+            <li><P1>"一带一路"战略为中国各行业转型升级，拓展市场空间带来了千载难逢新机遇</P1><p2> 2017-05-02</p2></li>
+            <li><P1>人民日报：研发AR\VR等创新技术，向网络强国扬帆起航</P1><p2> 2017-01-21</p2></li>
+            <li><P1>山东惊现"迪士尼"，投资30个亿的游乐场你见过吗？</P1><p2> 2017-01-20</p2></li>
+            <li><P1>恒大童世界天府青龙大桥正式开工建设</P1><p2> 2016-09-05</p2></li>
+            <li><P1>《文化部关于引导迷你歌咏亭市场健康发展的通知》有关问题解读</P1><p2>2016-08-24</p2></li>
+            <li><P1>国内首座横跨黄河的3D玻璃桥，比张家界玻璃栈道恐怖100倍</P1><p2>2016-05-28</p2></li>
+        </ul>
+            </div>
+        </div>
+<script type="text/javascript">
+            var myclick = function(v) {
+                var llis = document.getElementsByTagName("li");
+                for(var i = 0; i < llis.length; i++) {
+                    var lli = llis[i];
+                    if(lli == document.getElementById("tab" + v)) {
+                        lli.style.backgroundColor = "#ccc";
+                    } else {
+                        lli.style.backgroundColor = "";
+                    }
+                }
+
+                var divs = document.getElementsByClassName("tab_css");
+                for(var i = 0; i < divs.length; i++) {
+
+                    var divv = divs[i];
+
+                    if(divv == document.getElementById("tab" + v + "_content")) {
+                        divv.style.display = "block";
+                    } else {
+                        divv.style.display = "none";
+                    }
+                }
+
+            }
+</script>
+<div id="bottomnav">
+<a href=#>飞熊网</a> |
+<a href="公司简介.html">公司</a> |
+<a href="//www.11467.com/dir.html">黄页</a> |
+<a href="作品展示.html">产品</a> |
+<a href="联系我们.html">资讯</a> |
+<div>免责声明：本站信息由企业注册和来自工商局网站，本站完全免费，交易请核实资质，谨防诈骗 &nbsp;&nbsp;<a href="//www.11467.com/html/law.htm" title="法律声明" rel="nofollow">法律声明</a>&nbsp;&nbsp;<a href="联系我们.html" rel="nofollow">联系飞熊网</a>
+</div>
+&copy; 11467.com 飞熊网版权所有  发布批发采购信息、查询企业黄页，上飞熊网 <br/>
+地址：中国·中山 滨江区江南大道288号康恩贝大厦A座6F
+<button class="link"><a href="#key">Back to top</a></button>
+</div>
+</body>
+</html>
