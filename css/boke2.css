@@ -1,6 +1,11 @@
-@charset "utf-8";
-/* CSS Document */
-    *{
+/*
+* @Author: Marte
+* @Date:   2018-05-23 01:12:59
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-05-23 12:46:35
+*/
+@media screen and (max-width:600px){
+  *{
         margin:0px;
         padding:0px;
     }
@@ -24,38 +29,38 @@ a:hover{
 .head{
     margin: 0 auto;
 }
-.head .logo{
-    width:280px;
-    height:110px;
+.head .logo img{
+    width:150px;
+    height:80px;
     float:left;
-    margin-left:130px;
-    margin-top:-50px;
+    margin-left:0px;
+    margin-top:-10px;
 }
 .head .h_text{
-    width: 450px;
+    width: 260px;
     height: 100px;
     float: right;
     position: relative;
     color: #fff;
     text-shadow: 1px 1px 5px #000;
-    margin-top:-24px;
+    margin-top:-100px;
 }
 .head .h_text span{
     position: absolute;
 }
 .head .h_text span.meng{
-    font-size: 36px;
+    font-size: 25px;
     font-weight: 700;
-    top:10px;
-    left:0px;
+    top:25px;
+    left:10px;
 }
 .head .h_text span.xiang{
-    font-size: 24px;
+    font-size: 16px;
     top:40px;
-    left:40px;
+    left:50px;
 }
 .head .h_text span.text_t,.head .h_text span.text_b{
-    font-size: 14px;
+    font-size: 10px;
     display: none;
 }
 .head .h_text span.text_t{
@@ -63,7 +68,7 @@ a:hover{
     left:90px;
 }
 .head .h_text span.text_b{
-    top:82px;
+    top:70px;
     left:40px;
 }
 .logsearch{
@@ -88,6 +93,7 @@ a:hover{
     outline: none;
     float: left;
     line-height: 28px;
+    display:none;
 }
 .search_btn{
     width:60px;
@@ -98,6 +104,7 @@ a:hover{
     color:#fff;
     float: left;
     cursor:pointer;
+    display:none;
 }
 .gd{
     position: fixed;
@@ -109,8 +116,8 @@ a:hover{
     height:35px;
     position:relative;
     border-radius:50%;
-    right:-1270px;
-    top:20px;
+    right:-320px;
+    top:23px;
 }
 .play img{
     width:35px;
@@ -160,14 +167,14 @@ a:hover{
     margin:30px auto;
 }
 #main .nav .slider-outer{
-    width:700px;
+    width:100%;
     height:300px;
     float:left;
     position: relative;
 }
 .img-item{
         position: absolute;
-        width: 180px;
+        width: 67.5px;
         height: 100%;
         transition: all 1.5s;
         /*设置子元素在3D空间中呈现*/
@@ -222,10 +229,11 @@ a:hover{
     .next{
         right: 0;
     }
-#main .nav .blackboard{
-    width:400px;
-    height:300px;
+#main .nav .blackboard img{
+    width:330px;
+    height:210px;
     margin-left:20px;
+    margin-top:50px;
     float:right;
     box-shadow:1px 2px 15px #000;
 }
@@ -235,7 +243,7 @@ a:hover{
     position:relative;
 }
 #main .center .news{
-    width:750px;
+    width:100%;
     height:650px;
     background:rgba(241,240,238,.8);
     float:left;
@@ -270,8 +278,7 @@ a:hover{
 
 }
 #main .center .news .ali-img,.dream-img{
-    width:260px;
-    height:160px;
+
     top:15px;
     left:15px;
     position:absolute;
@@ -279,6 +286,8 @@ a:hover{
 }
 .ali-img img{
     transition:1s;
+    width:110px;
+    height:105px;
 }
 .dream-img img{
     transition:1s;
@@ -300,7 +309,7 @@ a:hover{
     overflow: hidden;
     height: 40px;
     line-height: 35px;
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 500;
     border-bottom: 1px solid #fff;
     padding-bottom: 5px;
@@ -329,15 +338,17 @@ a:hover{
     font-size: 12px;
     margin-top: 8px;
     position: relative;
+    width:185%;
+    left:-130px;
 }
 #main .center .news .ali-meta span{
     display:block;
     padding-right: 15px;
     white-space: nowrap;
-    width:50px;
+    // width:50px;
     overflow: hidden;
     display: inline-block;
-    margin-right:35px;
+    margin-right:60px;
 }
 #main .center .news  .ali-text .ali-meta a{
     text-decoration:none;
@@ -346,14 +357,14 @@ a:hover{
 }
 #main .center .news .ali-meta .mu-m4{
     display:block;
-    width:70px;
-    height:100%;
+    width:50px;
+    height:16px;
     background:#33b0ca;
     position:absolute;
     text-align:center;
-    line-height:21px;
+    line-height:16px;
     top:0px;
-    right:30px;
+    right:45px;
 }
 #main .center .news .bottom{
     width:100%;
@@ -374,8 +385,8 @@ a:hover{
     height:25px;
     background:#fff;
     position:absolute;
-    top:618px;
-    left:340px;
+    top:805px;
+    left:125px;
 }
 .tab_bar ul{
     display:flex;
@@ -392,9 +403,10 @@ a:hover{
     cursor:pointer;
 }
 #main .center .right{
-    width:380px;
+    width:360px;
     float:right;
-    margin-right:40px;
+    margin-right:-10px;
+    margin-top:10px;
 }
 #main .center .right .right_top{
     width:100%;
@@ -542,10 +554,10 @@ a:hover{
 }
 #main .center .show{
     width:97%;
-    height:740px;
+    height:2610px;
     background:rgba(241,240,238,.8);
     position:absolute;
-    top:660px;
+    top:1500px;
 }
 #main .center .show .banner{
     width:100%;
@@ -581,7 +593,7 @@ a:hover{
     width:270px;
     height:300px;
     background:#fff;
-    margin-top:15px;
+    margin:10px auto;
     padding:2px;
     position:relative;
     transition:.3s;
@@ -633,14 +645,13 @@ a:hover{
     height:50px;
     background:#ddd;
     position:absolute;
-    top:1780px;
+    margin-top:4110px;
 }
 .foot span{
     display:block;
     font-size:14px;
     line-height:50px;
-    margin-left:30px;
     text-align:center;
 }
 
-
+}
