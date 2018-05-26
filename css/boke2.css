@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-05-23 01:12:59
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-05-23 12:46:35
+* @Last Modified time: 2018-05-26 22:14:24
 */
 @media screen and (max-width:600px){
   *{
@@ -207,7 +207,7 @@ a:hover{
     .btns{
         position: absolute;
         top: 50%;
-        width: 100%;
+        width: 101%;
         height: 70px;
         margin-top: -35px;
     }

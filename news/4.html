@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>逐梦博客--web前端技术博客</title>
+    <meta name="keywords" content="逐梦,逐梦博客,个人博客,前端博客">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../css/boke1.css">
+    <link type="text/css" rel="stylesheet" href="../css/boke2.css">
+    <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/demo2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/news.css" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+</head>
+<body>
+<!--头部 -->
+<div class="heade">
+<!-- 导航栏-->
+<header class="mod-header">
+    <div class="mod-header__progress"></div>
+    <div class="mod-header__wrap">
+        <div class="js_menu mod-header__nav">
+            <ul id="menu-nav" class="menu"><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19"><a href="../zmindex.html">首页</a></li>
+                <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="">前端学习</a></li>
+                <li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="">心情小镇</a></li>
+                <li id="menu-item-2813" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2813"><a href="#link">作品案例</a></li>
+                <li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="">关于我</a></li>
+                <li id="menu-item-1016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1016"><a href="zhuizongshiguang.html" target="_new">追踪时光</a></li>
+                <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="">给我留言</a></li>
+            </ul>
+        </div>
+        </div>
+    <div class="logsearch">
+<form id="searchform" name="searchform" method="get" action="" target="">
+    <input type="text" name="s" id="bdcsMain" class="search" value="请输入搜索关键字"/>
+    <input type="submit" class="search_btn" value="搜索"/>
+</form>
+        </div>
+        <div id="play" class="play"><p id="before"></p><img src="../images/音乐.png"/><audio src="../music/岑宁儿 - 追光者.mp3" id="music"></audio></div>
+</header>
+</div>
+<div class="box">
+<div class="main">
+     <div class="m-news">
+     <h3>CSS3技巧：利用css3径向渐变做一张优惠券</h3>
+     <div class="news-top">
+         <ul>
+             <li>
+                 <img src="../images/rili.png" width="15px" height="15px">
+                          <span>&nbsp;2018-01-24</span>
+             </li>
+             <li>
+                 <img src="../images/个人信息.png" width="15px" height="15px">
+                          <span>逐梦</span>
+             </li>
+             <li>
+                 <img src="../images/浏览.png" width="15px" height="15px">
+                          <span>&nbsp; 1360次浏览</span>
+             </li>
+         </ul>
+     </div>
+     <div class="text">
+
+在很多购物网站上都能看到优惠券，代金券，什么什么的券，但基本都是图片直接放上去，那么你有没有想过css来
+做一个呢，那么你要怎么做呢，切图做背景平铺边缘，嗯，有这样想过，如今css3技术这么先进再用背景做平铺是不
+是已经out了，今天看到这个用css3径向渐变做的优惠券，就学习，收藏了，以防以后需要的时候找不到。<br><br>
+
+CSS3 径向渐变和线性渐变是很相似的，首先来看其语法：<br><br>
+<p>
+-moz-radial-gradient([<bg-position> || <angle>,]? [<shape> || <size>,]? <color-stop>, <color-stop>[, <color-stop>]*);<br><br>
+-webkit-radial-gradient([<bg-position> || <angle>,]? [<shape> || <size>,]? <color-stop>, <color-stop>[, <color-stop>]*);</p><br><br>
+除了你已经在线性渐变中看到的起始位置，方向和颜色，径向梯度允许你指定渐变的形状（圆形或椭圆形）和大小
+（最近端，最近角，最远端，最远角，包含或覆盖 (closest-side, closest-corner, farthest-side,
+ farthest-corner, contain or cover)。 颜色起止(Color stops)：就像用线性渐变，你应该沿着渐变线定义渐变
+ 的起止颜色。<br><br>
+
+做优惠券最主要的代码如下，就是这三句<br><br>
+
+background: radial-gradient(transparent 0, transparent 5px, #F39B00 5px);<br><br>
+background-size: 15px 15px;<br><br>
+background-position: 9px 3px;<br><br>
+不多解释直接上代码<br><br>
+
+优惠券<br><br>
+CSS代码<br><br>
+
+这是公共样式<br><br>
+
+.stamp {width: 387px;height: 140px;padding: 0 10px;position: relative;overflow: hidden;}<br><br>
+.stamp:before {content: '';position: absolute;top:0;bottom:0;left:10px;right:10px;z-index: -1;}<br><br>
+.stamp:after {content: '';position: absolute;left: 10px;top: 10px;right: 10px;bottom: 10px;
+box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);z-index: -2;}<br><br>
+.stamp i{position: absolute;left: 20%;top: 45px;height: 190px;width: 390px;
+background-color: rgba(255,255,255,.15);transform: rotate(-30deg);}<br><br>
+.stamp .par{float: left;padding: 16px 15px;width: 220px;border-right:2px dashed rgba(255,255,255,.3);text-align: left;}<br><br>
+.stamp .par p{color:#fff;}<br><br>
+.stamp .par span{font-size: 50px;color:#fff;margin-right: 5px;}<br><br>
+.stamp .par .sign{font-size: 34px;}<br><br>
+.stamp .par sub{position: relative;top:-5px;color:rgba(255,255,255,.8);}<br><br>
+.stamp .copy{display: inline-block;padding:21px 14px;width:100px;vertical-align: text-bottom;font-size: 30px;color:rgb(255,255,255);}<br><br>
+.stamp .copy p{font-size: 16px;margin-top: 15px;}<br><br>
+
+.stamp01{background: #F39B00;background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5px, #F39B00 5px);<br><br>
+background-size: 15px 15px;background-position: 9px 3px;}<br><br>
+.stamp01:before{background-color:#F39B00;}<br><br>
+
+.stamp02{background: #D24161;background: radial-gradient(transparent 0, transparent 5px, #D24161 5px);<br><br>
+background-size: 15px 15px;background-position: 9px 3px;}<br><br>
+.stamp02:before{background-color:#D24161;}<br><br>
+
+.stamp03{background: #7EAB1E;background: radial-gradient(transparent 0, transparent 5px, #7EAB1E 5px);<br><br>
+background-size: 15px 15px;background-position: 9px 3px;}<br><br>
+.stamp03:before{background-color:#7EAB1E;}<br><br>
+.stamp03 .copy{padding: 10px 6px 10px 12px;font-size: 24px;}<br><br>
+.stamp03 .copy p{font-size: 14px;margin-top: 5px;margin-bottom: 8px;}<br><br>
+.stamp03 .copy a{background-color:#fff;color:#333;font-size: <br><br>14px;text-decoration:none;padding:5px 10px;border-radius:3px;display: block;}<br><br>
+
+.stamp04{width: 390px;background: #50ADD3;background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 4px, #50ADD3 4px);<br><br>
+background-size: 12px 8px;background-position: -5px 10px;}<br><br>
+.stamp04:before{background-color:#50ADD3;left: 5px;right: 5px;}<br><br>
+.stamp04 .copy{padding: 10px 6px 10px 12px;font-size: 24px;}<br><br>
+.stamp04 .copy p{font-size: 14px;margin-top: 5px;margin-bottom: 8px;}<br><br>
+.stamp04 .copy a{background-color:#fff;color:#333;font-size: <br><br>14px;text-decoration:none;padding:5px 10px;border-radius:3px;display: block;}<br><br>
+效果图如下:<br><br>
+
+<img src="../images/优惠券.jpg"><br><br>
+
+PS：用这个方式还可以做邮票，不信你试试。<br><br>
+
+ <div class="news-foot">
+        <span>© 2018-未来  &nbsp;逐梦的个人博客    &nbsp;&nbsp;版权所有 </span>
+    </div>
+</div>
+     </div>
+     <div class="right">
+            <div class="right_top">
+                <ul class="right_top_ul">
+                    <li>网站开发</li>
+                    <li>逐梦心得</li>
+                    <li>SEO优化</li>
+                    <li>技术探讨</li>
+                    <li>网站运营</li>
+                    <li>前端实战</li>
+                </ul>
+            </div>
+            <div class="right_mid"><span>这个世界根本不存在"不会做"这回事,当你失去所有依靠的时候,你自然就什么都会了.</span></div>
+            <div class="right_bottom">
+                <div class="img"><img src="../images/touxiang.jpg" width="95px" height="125px"></div>
+                <div class="mynews">
+                    <ul>
+                        <li>姓名: 宋瑶</li>
+                        <li>网名: 逐梦</li>
+                        <li>职业: 在校大学生</li>
+                        <li>主页: sy1997.xyz</li>
+                        <li>地址: 江西南昌</li>
+                    </ul>
+                </div>
+                <div class="banner"><p>网站开发+QQ: 1833717392</p></div>
+                <div class="share">
+                    <ul>
+                        <li><img src="../images/微信.png"></li>
+                        <li><img src="../images/QQ.png"></li>
+                        <li><a href="https://weibo.com/p/1005056392872088/home?from=page_100505&mod=TAB#place"><img src="../images/微博.png"></a></li>
+                        <li><img src="../images/电话.png"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>
+<div id="flybtn" class="fly" style="display: none"><img src="../images/返回顶部.png"></div>
+<script>
+    //返回顶部功能
+// document.getElementById("flybtn").onclick=function back(){
+//     flybtn.scrollIntoView();
+// }
+var timer = null;
+flybtn.onclick = function back(){
+cancelAnimationFrame(timer);
+timer = requestAnimationFrame(function fn(){
+var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+if(oTop > 0){
+document.body.scrollTop = document.documentElement.scrollTop = oTop - 30;
+timer = requestAnimationFrame(fn);
+}else{
+cancelAnimationFrame(timer);
+}
+});
+};
+window.onscroll=function (){
+    var t=document.body.scrollTop || document.documentElement.scrollTop;
+    var flybtn=document.getElementById("flybtn");
+    if(t<100){
+        flybtn.style.display="none";
+    }else{
+        flybtn.style.display="block";
+    };
+};
+//音乐播放
+var oMusic=document.getElementById("music");
+var oPlay=document.getElementById("play");
+var mark=true;
+var before=document.getElementById("before");
+oPlay.onclick=function(){
+    if(mark){
+        oMusic.play();
+        this.className = "play rotate";
+        before.style.display="none";
+    }else{
+        oMusic.pause();
+        this.className="play";
+        before.style.display="block";
+    }
+    mark=!mark;
+};
+//监听音乐播放完毕并继续播放
+oMusic.addEventListener("ended",function(){
+    oPlay.className="play rotate";
+    before.style.display="none";
+    mark=true;
+    oMusic.play();
+});
+</script>
+        <script type="text/javascript" src="../js/swiper-3.3.1.jquery.min.js"></script>
+        <script src="../js/jquery.js"></script>
+        <script src="../js/piano-play.js"></script>
+        <script src="../js/piano.js"></script>
+        <script src="../js/jquery-1.11.3.min.js"></script>
+</body>
+</html>

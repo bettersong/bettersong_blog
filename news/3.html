@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>逐梦博客--web前端技术博客</title>
+    <meta name="keywords" content="逐梦,逐梦博客,个人博客,前端博客">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../css/boke1.css">
+    <link type="text/css" rel="stylesheet" href="../css/boke2.css">
+    <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/demo2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/news.css" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+</head>
+<body>
+<!--头部 -->
+<div class="heade">
+<!-- 导航栏-->
+<header class="mod-header">
+    <div class="mod-header__progress"></div>
+    <div class="mod-header__wrap">
+        <div class="js_menu mod-header__nav">
+            <ul id="menu-nav" class="menu"><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19"><a href="../zmindex.html">首页</a></li>
+                <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="">前端学习</a></li>
+                <li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="">心情小镇</a></li>
+                <li id="menu-item-2813" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2813"><a href="#link">作品案例</a></li>
+                <li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="">关于我</a></li>
+                <li id="menu-item-1016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1016"><a href="zhuizongshiguang.html" target="_new">追踪时光</a></li>
+                <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="">给我留言</a></li>
+            </ul>
+        </div>
+        </div>
+    <div class="logsearch">
+<form id="searchform" name="searchform" method="get" action="" target="">
+    <input type="text" name="s" id="bdcsMain" class="search" value="请输入搜索关键字"/>
+    <input type="submit" class="search_btn" value="搜索"/>
+</form>
+        </div>
+        <div id="play" class="play"><p id="before"></p><img src="../images/音乐.png"/><audio src="../music/岑宁儿 - 追光者.mp3" id="music"></audio></div>
+</header>
+</div>
+<div class="box">
+<div class="main">
+     <div class="m-news">
+     <h3>手机移动端web资源整合</h3>
+     <div class="news-top">
+         <ul>
+             <li>
+                 <img src="../images/rili.png" width="15px" height="15px">
+                          <span>&nbsp;2018-02-15</span>
+             </li>
+             <li>
+                 <img src="../images/个人信息.png" width="15px" height="15px">
+                          <span>逐梦</span>
+             </li>
+             <li>
+                 <img src="../images/浏览.png" width="15px" height="15px">
+                          <span>&nbsp; 1680次浏览</span>
+             </li>
+         </ul>
+     </div>
+     <div class="text">
+
+移动端touch事件(区分webkit 和 winphone)<br><br>
+
+当用户手指放在移动设备在屏幕上滑动会触发的touch事件<br><br>
+
+以下支持webkit<br><br>
+
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指<br><br>
+
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动<br><br>
+
+touchend——当手指离开屏幕时触发<br><br>
+
+touchcancel——系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用<br><br>
+
+TouchEvent<br><br>
+
+touches：屏幕上所有手指的信息<br><br>
+
+targetTouches：手指在目标区域的手指信息<br><br>
+
+changedTouches：最近一次触发该事件的手指信息<br><br>
+
+touchend时，touches与targetTouches信息会被删除，changedTouches保存的最后一次的信息，最好用于计算手指信息<br><br>
+
+参数信息(changedTouches[0])<br><br>
+
+clientX、clientY在显示区的坐标<br><br>
+
+target：当前元素<br><br>
+
+参考：https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent<br><br>
+
+以下支持winphone 8<br><br>
+
+MSPointerDown——当手指触碰屏幕时候发生。不管当前有多少只手指<br><br>
+
+MSPointerMove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的html{-ms-touch-action: none;}<br><br>
+
+可以阻止默认情况的发生：阻止页面滚动<br><br>
+
+MSPointerUp——当手指离开屏幕时触发移动端click屏幕产生200-300 ms的延迟响应移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。<br><br>
+
+以下是历史原因，来源一个公司内一个同事的分享：<br><br>
+
+2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容
+虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大
+后的内容，再次双击后能回到原始状态。<br><br>
+
+双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。<br><br>
+
+原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接，此处浏览器
+会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次
+单击后，浏览器会先Hold一段时间t，如果在t时间区间里
+用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止
+跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就
+是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，
+页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。<br><br>
+
+解决方案：<br><br>
+
+fastclick可以解决在手机上点击事件的300ms延迟<br><br>
+
+zepto的touch模块，tap事件也是为了解决在click的延迟问题<br><br>
+
+触摸事件的响应顺序<br><br>
+
+ontouchstart<br><br>
+
+ontouchmove<br><br>
+
+ontouchend<br><br>
+
+onclick<br><br>
+
+解决300ms延迟的问题，也可以通过绑定ontouchstart事件，加快对事件的响应<br><br>
+
+什么是Retina 显示屏，带来了什么问题<br><br>
+
+retina：一种具备超高像素密度的液晶屏，同样大小的屏幕上显示的像素点由1个变为多个，如在同样带下的屏幕上，
+苹果设备的
+
+retina显示屏中，像素点1个变为4个
+
+在高清显示屏中的位图被放大，图片会变得模糊，因此移动端的视觉稿通常会设计为传统PC的2倍
+
+那么，前端的应对方案是：<br><br>
+
+设计稿切出来的图片长宽保证为偶数，并使用backgroud-size把图片缩小为原来的1/2
+
+
+ <div class="news-foot">
+        <span>© 2018-未来  &nbsp;逐梦的个人博客    &nbsp;&nbsp;版权所有 </span>
+    </div>
+</div>
+     </div>
+     <div class="right">
+            <div class="right_top">
+                <ul class="right_top_ul">
+                    <li>网站开发</li>
+                    <li>逐梦心得</li>
+                    <li>SEO优化</li>
+                    <li>技术探讨</li>
+                    <li>网站运营</li>
+                    <li>前端实战</li>
+                </ul>
+            </div>
+            <div class="right_mid"><span>这个世界根本不存在"不会做"这回事,当你失去所有依靠的时候,你自然就什么都会了.</span></div>
+            <div class="right_bottom">
+                <div class="img"><img src="../images/touxiang.jpg" width="95px" height="125px"></div>
+                <div class="mynews">
+                    <ul>
+                        <li>姓名: 宋瑶</li>
+                        <li>网名: 逐梦</li>
+                        <li>职业: 在校大学生</li>
+                        <li>主页: sy1997.xyz</li>
+                        <li>地址: 江西南昌</li>
+                    </ul>
+                </div>
+                <div class="banner"><p>网站开发+QQ: 1833717392</p></div>
+                <div class="share">
+                    <ul>
+                        <li><img src="../images/微信.png"></li>
+                        <li><img src="../images/QQ.png"></li>
+                        <li><a href="https://weibo.com/p/1005056392872088/home?from=page_100505&mod=TAB#place"><img src="../images/微博.png"></a></li>
+                        <li><img src="../images/电话.png"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>
+<div id="flybtn" class="fly" style="display: none"><img src="../images/返回顶部.png"></div>
+<script>
+    //返回顶部功能
+// document.getElementById("flybtn").onclick=function back(){
+//     flybtn.scrollIntoView();
+// }
+var timer = null;
+flybtn.onclick = function back(){
+cancelAnimationFrame(timer);
+timer = requestAnimationFrame(function fn(){
+var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+if(oTop > 0){
+document.body.scrollTop = document.documentElement.scrollTop = oTop - 30;
+timer = requestAnimationFrame(fn);
+}else{
+cancelAnimationFrame(timer);
+}
+});
+};
+window.onscroll=function (){
+    var t=document.body.scrollTop || document.documentElement.scrollTop;
+    var flybtn=document.getElementById("flybtn");
+    if(t<100){
+        flybtn.style.display="none";
+    }else{
+        flybtn.style.display="block";
+    };
+};
+//音乐播放
+var oMusic=document.getElementById("music");
+var oPlay=document.getElementById("play");
+var mark=true;
+var before=document.getElementById("before");
+oPlay.onclick=function(){
+    if(mark){
+        oMusic.play();
+        this.className = "play rotate";
+        before.style.display="none";
+    }else{
+        oMusic.pause();
+        this.className="play";
+        before.style.display="block";
+    }
+    mark=!mark;
+};
+//监听音乐播放完毕并继续播放
+oMusic.addEventListener("ended",function(){
+    oPlay.className="play rotate";
+    before.style.display="none";
+    mark=true;
+    oMusic.play();
+});
+</script>
+        <script type="text/javascript" src="../js/swiper-3.3.1.jquery.min.js"></script>
+        <script src="../js/jquery.js"></script>
+        <script src="../js/piano-play.js"></script>
+        <script src="../js/piano.js"></script>
+        <script src="../js/jquery-1.11.3.min.js"></script>
+</body>
+</html>

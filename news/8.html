@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>逐梦博客--web前端技术博客</title>
+    <meta name="keywords" content="逐梦,逐梦博客,个人博客,前端博客">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../css/boke1.css">
+    <link type="text/css" rel="stylesheet" href="../css/boke2.css">
+    <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/demo2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/news.css" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+</head>
+<body>
+<!--头部 -->
+<div class="heade">
+<!-- 导航栏-->
+<header class="mod-header">
+    <div class="mod-header__progress"></div>
+    <div class="mod-header__wrap">
+        <div class="js_menu mod-header__nav">
+            <ul id="menu-nav" class="menu"><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19"><a href="../zmindex.html">首页</a></li>
+                <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="">前端学习</a></li>
+                <li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="">心情小镇</a></li>
+                <li id="menu-item-2813" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2813"><a href="#link">作品案例</a></li>
+                <li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="">关于我</a></li>
+                <li id="menu-item-1016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1016"><a href="zhuizongshiguang.html" target="_new">追踪时光</a></li>
+                <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="">给我留言</a></li>
+            </ul>
+        </div>
+        </div>
+    <div class="logsearch">
+<form id="searchform" name="searchform" method="get" action="" target="">
+    <input type="text" name="s" id="bdcsMain" class="search" value="请输入搜索关键字"/>
+    <input type="submit" class="search_btn" value="搜索"/>
+</form>
+        </div>
+        <div id="play" class="play"><p id="before"></p><img src="../images/音乐.png"/><audio src="../music/岑宁儿 - 追光者.mp3" id="music"></audio></div>
+</header>
+</div>
+<div class="box">
+<div class="main">
+     <div class="m-news">
+     <h3>jquery append 动态添加的元素事件on 不起作用的解决方法</h3>
+     <div class="news-top">
+         <ul>
+             <li>
+                 <img src="../images/rili.png" width="15px" height="15px">
+                          <span>&nbsp;2017-11-16</span>
+             </li>
+             <li>
+                 <img src="../images/个人信息.png" width="15px" height="15px">
+                          <span>逐梦</span>
+             </li>
+             <li>
+                 <img src="../images/浏览.png" width="15px" height="15px">
+                          <span>&nbsp; 1980次浏览</span>
+             </li>
+         </ul>
+     </div>
+     <div class="text">
+
+昨天，在做项目的时候，一直被一个问题困扰着，用append动态添加的元素，用 click事件的时候，竟然不起作用，
+后来就在标签里添加了onclick=”function()”, 实现了效果，这是一种方法。<br><br>
+
+百度了半天，都说用.on(“click”,function(){})就可以解决。但我还是没实现出来，今天偶然看到一篇文章，终
+于有了解决方法，赶紧记录下来。代码如下：<br><br>
+
+<textarea readonly="readonly" name="code" class="html">
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>测试</title>
+
+<script type="text/javascript"src="../resources/js/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+//动态添加
+$(".add").on("click",function(){
+
+console.log("进来了");
+
+$(".info").append('<div class="delete"><h3>单击我来删除我</h3></div>');
+
+});
+ //对动态添加的元素添加事件-删除
+$(".info").on("click",".delete",function(){
+
+console.log("进来了Delete！");
+
+$(this).remove();
+
+});
+
+ });
+
+</script>
+
+ </head>
+
+<body>
+
+ <h2 class='add'>单击我添加动态元素</h2>
+
+ <div class="info"></div>
+
+ </body>
+
+</html>
+
+</textarea>
+<br><br>
+on方法中要先找到原选择器(如例.info),再找到动态添加的选择器（如列.delete)。完美解决我遇到的问题。
+
+ <div class="news-foot">
+        <span>© 2018-未来  &nbsp;逐梦的个人博客    &nbsp;&nbsp;版权所有 </span>
+    </div>
+</div>
+     </div>
+     <div class="right">
+            <div class="right_top">
+                <ul class="right_top_ul">
+                    <li>网站开发</li>
+                    <li>逐梦心得</li>
+                    <li>SEO优化</li>
+                    <li>技术探讨</li>
+                    <li>网站运营</li>
+                    <li>前端实战</li>
+                </ul>
+            </div>
+            <div class="right_mid"><span>这个世界根本不存在"不会做"这回事,当你失去所有依靠的时候,你自然就什么都会了.</span></div>
+            <div class="right_bottom">
+                <div class="img"><img src="../images/touxiang.jpg" width="95px" height="125px"></div>
+                <div class="mynews">
+                    <ul>
+                        <li>姓名: 宋瑶</li>
+                        <li>网名: 逐梦</li>
+                        <li>职业: 在校大学生</li>
+                        <li>主页: sy1997.xyz</li>
+                        <li>地址: 江西南昌</li>
+                    </ul>
+                </div>
+                <div class="banner"><p>网站开发+QQ: 1833717392</p></div>
+                <div class="share">
+                    <ul>
+                        <li><img src="../images/微信.png"></li>
+                        <li><img src="../images/QQ.png"></li>
+                        <li><a href="https://weibo.com/p/1005056392872088/home?from=page_100505&mod=TAB#place"><img src="../images/微博.png"></a></li>
+                        <li><img src="../images/电话.png"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>
+<div id="flybtn" class="fly" style="display: none"><img src="../images/返回顶部.png"></div>
+<script>
+    //返回顶部功能
+// document.getElementById("flybtn").onclick=function back(){
+//     flybtn.scrollIntoView();
+// }
+var timer = null;
+flybtn.onclick = function back(){
+cancelAnimationFrame(timer);
+timer = requestAnimationFrame(function fn(){
+var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+if(oTop > 0){
+document.body.scrollTop = document.documentElement.scrollTop = oTop - 30;
+timer = requestAnimationFrame(fn);
+}else{
+cancelAnimationFrame(timer);
+}
+});
+};
+window.onscroll=function (){
+    var t=document.body.scrollTop || document.documentElement.scrollTop;
+    var flybtn=document.getElementById("flybtn");
+    if(t<100){
+        flybtn.style.display="none";
+    }else{
+        flybtn.style.display="block";
+    };
+};
+//音乐播放
+var oMusic=document.getElementById("music");
+var oPlay=document.getElementById("play");
+var mark=true;
+var before=document.getElementById("before");
+oPlay.onclick=function(){
+    if(mark){
+        oMusic.play();
+        this.className = "play rotate";
+        before.style.display="none";
+    }else{
+        oMusic.pause();
+        this.className="play";
+        before.style.display="block";
+    }
+    mark=!mark;
+};
+//监听音乐播放完毕并继续播放
+oMusic.addEventListener("ended",function(){
+    oPlay.className="play rotate";
+    before.style.display="none";
+    mark=true;
+    oMusic.play();
+});
+</script>
+        <script type="text/javascript" src="../js/swiper-3.3.1.jquery.min.js"></script>
+        <script src="../js/jquery.js"></script>
+        <script src="../js/piano-play.js"></script>
+        <script src="../js/piano.js"></script>
+        <script src="../js/jquery-1.11.3.min.js"></script>
+</body>
+</html>
