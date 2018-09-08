@@ -317,7 +317,7 @@ a:hover{
     margin-left:10px;
 }
 #main .center .news .ali-con,.dream-con{
-    height: 96px;
+    height: 100px;
     overflow: hidden;
     color: #555;
     line-height: 24px;
@@ -331,8 +331,11 @@ a:hover{
 #main .center .news  .ali-meta{
     color: #999;
     font-size: 12px;
-    margin-top: 8px;
+    margin-top: 10px;
     position: relative;
+}
+.news  .ali-meta .span2{
+    margin-left:15px;
 }
 #main .center .news .ali-meta span{
     display:block;

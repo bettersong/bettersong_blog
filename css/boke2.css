@@ -1,7 +1,7 @@
 /*
-* @Author: Marte
+* @Author: songyao
 * @Date:   2018-05-23 01:12:59
-* @Last Modified by:   Marte
+* @Last Modified by:   songyao
 * @Last Modified time: 2018-05-26 22:14:24
 */
 @media screen and (max-width:600px){
@@ -14,6 +14,7 @@
     width:100%;
     height:180px;
     position:fixed;
+    top: 0px;
     z-index:2;
 }
 a:hover{
@@ -151,18 +152,16 @@ a:hover{
           width:100%;
           height:100%;
           position:fixed;
-          margin-top:60px;
+          margin-top: -100px;
+          z-index: -1;
         }
 #main{
-    width:100%;
+    max-width:600px;
     height:100%;
-    // height:800px;
-    position:absolute;
-    top:180px;
-    left:0px;
+    margin-top: 200px;
 }
 #main .nav{
-    width:90%;
+    width: 330px;
     height:300px;
     margin:30px auto;
 }
@@ -207,7 +206,7 @@ a:hover{
     .btns{
         position: absolute;
         top: 50%;
-        width: 101%;
+        width: 340px;
         height: 70px;
         margin-top: -35px;
     }
@@ -232,14 +231,15 @@ a:hover{
 #main .nav .blackboard img{
     width:330px;
     height:210px;
-    margin-left:20px;
     margin-top:50px;
     float:right;
+    margin-left: 40px;
+    margin-bottom: 20px;
     box-shadow:1px 2px 15px #000;
 }
 #main .center{
-    width:90%;
-    margin:70px auto 10px;
+    width: 330px;
+    margin: 70px auto;
     position:relative;
 }
 #main .center .news{
@@ -341,14 +341,17 @@ a:hover{
     width:185%;
     left:-130px;
 }
+.news  .ali-meta .span2{
+    margin-left:-30px;
+}
 #main .center .news .ali-meta span{
     display:block;
     padding-right: 15px;
     white-space: nowrap;
-    // width:50px;
+    width:50px;
     overflow: hidden;
     display: inline-block;
-    margin-right:60px;
+    margin-right: 35px;
 }
 #main .center .news  .ali-text .ali-meta a{
     text-decoration:none;
@@ -385,7 +388,7 @@ a:hover{
     height:25px;
     background:#fff;
     position:absolute;
-    top:805px;
+    top: 825px;
     left:125px;
 }
 .tab_bar ul{
@@ -403,13 +406,14 @@ a:hover{
     cursor:pointer;
 }
 #main .center .right{
-    width:360px;
+    width: 351px;
     float:right;
     margin-right:-10px;
     margin-top:10px;
 }
 #main .center .right .right_top{
-    width:100%;
+    width: 95%;
+    margin: 10px auto;
     height:160px;
 }
 #main .center .right .right_top .right_top_ul{
@@ -419,7 +423,7 @@ a:hover{
     justify-content:space-around;
 }
 #main .center .right .right_top .right_top_ul li{
-    width:110px;
+    width: 100px;
     height:75px;
     margin-bottom:2px;
     margin-left:1px;
@@ -477,56 +481,54 @@ a:hover{
      transform:rotate(360deg);
 }
 #main .center .right .right_mid{
-    width:365px;
+    width: 330px;
     height:160px;
     background:#fe6150;
     margin:0 auto;
-    text-align:center;
-    padding-top:70px;
+    padding-top: 40px;
 }
 #main .center .right .right_mid span{
     display:block;
     color:#fff;
-    line-height:30px;
-    margin-top:0px;
+    line-height: 30px;
+    margin: 15px;
 }
 #main .center .right .right_bottom{
-    width:365px;
+    width: 330px;
     height:270px;
     margin:10px auto;
     position:relative;
 }
 #main .center .right .right_bottom .img{
-    width:95px;
-    height:125px;
-    background:#000;
+    width: 100px;
+    height: 130px;
 }
 #main .center .right .right_bottom .mynews{
-    width:180px;
+    width: 180px;
     height:125px;
     float:right;
-    margin-right:85px;
+    margin-right: 0px;
 }
 #main .center .right .right_bottom .mynews li{
-    margin-top:4px;
+    margin-top: 2px;
     color:#000;
 }
 #main .center .right .right_bottom .banner{
-    width:365px;
+    width: 330px;
     height:40px;
     background:#fe6150;
     position:absolute;
-    top:130px;
+    top: 145px;
     color:#fff;
     line-height:40px;
     text-align:center;
     font-weight:bold;
 }
 #main .center .right .right_bottom .share{
-    width:365px;
+    width: 330px;
     height:50px;
     position:absolute;
-    top:190px;
+    top: 200px;
 }
 #main .center .right .right_bottom .share ul{
     display:flex;
@@ -535,7 +537,6 @@ a:hover{
 #main .center .right .right_bottom .share ul li{
     width:50px;
     height:50px;
-    // margin:0 2px;
     cursor:pointer;
 }
 #main .center .right .right_bottom .share ul li img{
@@ -554,10 +555,10 @@ a:hover{
 }
 #main .center .show{
     width:97%;
-    height:2610px;
+    height: 2645px;
     background:rgba(241,240,238,.8);
     position:absolute;
-    top:1500px;
+    top: 1530px;
 }
 #main .center .show .banner{
     width:100%;
@@ -641,11 +642,11 @@ a:hover{
     font-size:14px;
 }
 .foot{
-    width:100%;
+    width: 100%;
     height:50px;
     background:#ddd;
     position:absolute;
-    margin-top:4110px;
+    margin-top: 4147px;
 }
 .foot span{
     display:block;
