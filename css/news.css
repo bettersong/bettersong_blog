@@ -42,7 +42,7 @@ body{position:relative;margin:0px}
     font-size:16px;
     color:#666;
     line-height:25px;
-    font-family: 微软雅黑;
+    font-family: å¾®è½¯é›…é»‘;
 }
 
 .main .m-news .text textarea{
@@ -172,7 +172,7 @@ body{position:relative;margin:0px}
     height:40px;
     background:#fe6150;
     position:absolute;
-    top:130px;
+    top: 150px;
     color:#fff;
     line-height:40px;
     text-align:center;
@@ -182,7 +182,7 @@ body{position:relative;margin:0px}
     width:365px;
     height:50px;
     position:absolute;
-    top:190px;
+    top: 200px;
 }
 .right .right_bottom .share ul{
     display:flex;
@@ -229,11 +229,11 @@ body{position:relative;margin:0px}
     height:100%;
 }
 .main .m-news{
-    width:70%;
+    width: 88%;
     height:100%;
     background:#fff;
     position:absolute;
-    left:50px;
+    left: 25px;
     top:770px;
 }
 .main .m-news h3{
@@ -263,7 +263,7 @@ body{position:relative;margin:0px}
     font-size:16px;
     color:#666;
     line-height:25px;
-    font-family: 微软雅黑;
+    font-family: å¾®è½¯é›…é»‘;
 }
 .main .m-news .text img{
     width:280px;
@@ -282,14 +282,16 @@ body{position:relative;margin:0px}
 }
 .main .right{
     position:absolute;
-    top:120px;
-    width:370px;
+    top: 90px;
+    width: 340px;
     float:right;
-    margin-right:40px;
+    margin: 10px auto;
+    margin-left: 15px;
 }
 .right .right_top{
     width:100%;
     height:160px;
+    margin: 10px auto;
 }
 .right .right_top .right_top_ul{
     list-style:none;
@@ -356,56 +358,54 @@ body{position:relative;margin:0px}
      transform:rotate(360deg);
 }
 .right .right_mid{
-    width:365px;
+    width: 100%;
     height:160px;
     background:#fe6150;
     margin:0 auto;
-    text-align:center;
     padding-top:70px;
 }
 .right .right_mid span{
-    display:block;
     color:#fff;
     line-height:30px;
-    margin-top:0px;
+    padding: 5px;
 }
 .right .right_bottom{
-    width:365px;
+    width: 100%;
     height:270px;
     margin:10px auto;
     position:relative;
 }
 .right .right_bottom .img{
     width:95px;
-    height:125px;
+    height: 125px;
     background:#000;
 }
 .right .right_bottom .mynews{
     width:180px;
     height:125px;
     float:right;
-    margin-right:85px;
+    margin-right: 40px;
 }
 .right .right_bottom .mynews li{
-    margin-top:4px;
+    margin-top: 2px;
     color:#000;
 }
 .right .right_bottom .banner{
-    width:365px;
+    width: 330px;
     height:40px;
     background:#fe6150;
     position:absolute;
-    top:130px;
+    top: 150px;
     color:#fff;
     line-height:40px;
     text-align:center;
     font-weight:bold;
 }
 .right .right_bottom .share{
-    width:365px;
+    width: 100%;
     height:50px;
     position:absolute;
-    top:190px;
+    top: 200px;
 }
 .right .right_bottom .share ul{
     display:flex;
@@ -414,7 +414,7 @@ body{position:relative;margin:0px}
 .right .right_bottom .share ul li{
     width:50px;
     height:50px;
-    // margin:0 2px;
+    margin:0 2px;
     cursor:pointer;
 }
 .right .right_bottom .share ul li img{

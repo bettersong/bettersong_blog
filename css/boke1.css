@@ -399,9 +399,9 @@ a:hover{
     cursor:pointer;
 }
 #main .center .right{
-    width:380px;
+    width: 400px;
     float:right;
-    margin-right:40px;
+    margin-right: -5px;
 }
 #main .center .right .right_top{
     width:100%;
@@ -472,8 +472,8 @@ a:hover{
      transform:rotate(360deg);
 }
 #main .center .right .right_mid{
-    width:365px;
-    height:160px;
+    width: 375px;
+    height: 150px;
     background:#fe6150;
     margin:0 auto;
     text-align:center;
@@ -500,18 +500,18 @@ a:hover{
     width:180px;
     height:125px;
     float:right;
-    margin-right:85px;
+    margin-right: 70px;
 }
 #main .center .right .right_bottom .mynews li{
     margin-top:4px;
     color:#000;
 }
 #main .center .right .right_bottom .banner{
-    width:365px;
+    width: 370px;
     height:40px;
     background:#fe6150;
     position:absolute;
-    top:130px;
+    top: 145px;
     color:#fff;
     line-height:40px;
     text-align:center;
@@ -521,7 +521,7 @@ a:hover{
     width:365px;
     height:50px;
     position:absolute;
-    top:190px;
+    top: 200px;
 }
 #main .center .right .right_bottom .share ul{
     display:flex;
@@ -530,7 +530,7 @@ a:hover{
 #main .center .right .right_bottom .share ul li{
     width:50px;
     height:50px;
-    // margin:0 2px;
+    margin:0 2px;
     cursor:pointer;
 }
 #main .center .right .right_bottom .share ul li img{
@@ -543,12 +543,12 @@ a:hover{
     position:fixed;
     border-radius:50%;
     right:20px;
-    top:600px;
+    top:550px;
     z-index:9;
     cursor:pointer;
 }
 #main .center .show{
-    width:97%;
+    width: 100%;
     height:740px;
     background:rgba(241,240,238,.8);
     position:absolute;

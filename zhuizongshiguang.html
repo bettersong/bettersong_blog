@@ -3,8 +3,9 @@
 <head>
 <title>逐梦博客--追踪时光</title>
 <meta name="viewport" content="width = 1050, user-scalable = no" />
-<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
+<link rel="shortcut icon" href="images/favicon.ico" />
 <style>
 @media screen and (min-width:900px){
     .img2 img{
@@ -29,7 +30,6 @@
 </style>
 </head>
 <body>
-
 <div class="flipbook-viewport">
     <div class="container">
         <div class="flipbook">
@@ -105,40 +105,24 @@
         </div>
     </div>
 </div>
-
-
+<script src="js/star.js"></script>
 <script type="text/javascript">
-
 function loadApp() {
-
     // Create the flipbook
-
     $('.flipbook').turn({
             // Width
-
             width:922,
-
             // Height
-
             height:600,
-
             // Elevation
-
             elevation: 50,
-
             // Enable gradients
-
             gradients: true,
-
             // Auto center this flipbook
-
-            autoCenter: true
-
+           autoCenter: true
     });
 }
-
 // Load the HTML4 version if there's not CSS transform
-
 yepnope({
     test : Modernizr.csstransforms,
     yep: ['js/turn.js'],
@@ -146,7 +130,6 @@ yepnope({
     both: ['css/basic.css'],
     complete: loadApp
 });
-
 </script>
 </body>
 </html>
