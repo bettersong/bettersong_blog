@@ -223,6 +223,9 @@ body{position:relative;margin:0px}
 */
 @media screen and (max-width:600px){
 body{position:relative;margin:0px}
+.box{
+    width:330px;
+}
 .main{
     width:100%;
     background:#ccc ;
@@ -424,8 +427,8 @@ body{position:relative;margin:0px}
 .news-foot{
     margin-top:50px;
     position:absolute;
-    left:-50px;
-    width:166%;
+    left: -25px;
+    width: 375px;
     height:50px;
     background:#ddd;
 }
