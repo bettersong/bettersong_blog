@@ -48,11 +48,11 @@
         </div>
     <div class="logsearch">
 <form id="searchform" name="searchform" method="get" action="" target="">
-    <input type="text" name="s" id="bdcsMain" class="search" value="请输入搜索关键字"/>
+    <input type="text" name="s" id="bdcsMain" class="search" value="" placeholder="请输入搜索关键字"/>
     <input type="submit" class="search_btn" value="搜索"/>
 </form>
         </div>
-        <div id="play" class="play"><p id="before"></p><img src="images/音乐.png"/><audio src="music/岑宁儿 - 追光者.mp3" id="music"></audio></div>
+        <div id="play" class="play"><p id="before"></p><img src="images/音乐.png"/><audio src="music/叶洛洛 - 我的将军啊.mp3" id="music" ></audio></div> 
 </header>
 </div>
 <canvas id="bubble"></canvas>
@@ -344,12 +344,12 @@
         <div class="right">
             <div class="right_top">
                 <ul class="right_top_ul">
-                    <li>网站开发</li>
-                    <li>逐梦心得</li>
-                    <li>SEO优化</li>
-                    <li>技术探讨</li>
-                    <li>网站运营</li>
-                    <li>前端实战</li>
+                    <li><a href="news/6.html">网站开发</a></li>
+                    <li><a href="news/1.html">逐梦心得</a></li>
+                    <li><a href="news/5.html">SEO优化</a></li>
+                    <li><a href="news/2.html">技术探讨</a></li>
+                    <li><a href="news/7.html">网站运营</a></li>
+                    <li><a href="news/9.html">前端实战</a></li>
                 </ul>
             </div>
             <div class="right_mid"><span>这个世界根本不存在"不会做"这回事,当你失去所有依靠的时候,你自然就什么都会了.</span></div>
@@ -410,8 +410,9 @@
             </div>
         </div>
     </div>
-    <div class="foot">
+    <div class="foot" >
         <span>© 2018-未来  &nbsp;逐梦的个人博客    &nbsp;&nbsp;版权所有 </span>
+        <p id="fangke" style="position:absolute;top:0px;line-height: 50px;right:430px;font-size: 12px;color:red"></p>
     </div>
 </div>
 <div id="flybtn" class="fly" style="display: none"><img src="images/返回顶部.png"></div>
@@ -421,5 +422,72 @@
         <script src="js/piano-play.js"></script>
         <script src="js/piano.js"></script>
         <script src="js/star.js"></script>
+        <script type="text/javascript">
+var caution=false
+function setCookie(name,value,expires,path,domain,secure) 
+{
+ var curCookie=name+"="+escape(value) +
+ ((expires)?";expires="+expires.toGMTString() : "") +
+ ((path)?"; path=" + path : "") +
+ ((domain)? "; domain=" + domain : "") +
+ ((secure)?";secure" : "")
+ if(!caution||(name + "=" + escape(value)).length <= 4000)
+ {
+ document.cookie = curCookie
+ }
+ else if(confirm("Cookie exceeds 4KB and will be cut!"))
+ {
+ document.cookie = curCookie
+ }
+}
+function getCookie(name) 
+{
+ var prefix = name + "="
+ var cookieStartIndex = document.cookie.indexOf(prefix)
+ if (cookieStartIndex == -1)
+ {
+ return null
+ }    
+ var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+ if(cookieEndIndex == -1)
+ {
+ cookieEndIndex = document.cookie.length
+ }
+ return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+}
+function deleteCookie(name, path, domain) 
+{
+ if(getCookie(name)) 
+ {
+ document.cookie = name + "=" + 
+ ((path) ? "; path=" + path : "") +
+ ((domain) ? "; domain=" + domain : "") +
+ "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+ }
+}
+function fixDate(date) 
+{
+ var base=new Date(0)
+ var skew=base.getTime()
+ if(skew>0)
+ {
+ date.setTime(date.getTime()-skew)
+ }    
+}
+var now=new Date()
+fixDate(now)
+now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if(!visits)
+{
+ visits=1;
+}  
+else
+{
+ visits=parseInt(visits)+1;
+}  
+setCookie("counter", visits, now)
+$("#fangke").html("(访客量："+ visits +")");
+        </script>
 </body>
 </html>

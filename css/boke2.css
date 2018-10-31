@@ -10,6 +10,20 @@
         padding:0px;
     }
     html{height:100%}
+.weixin{
+        width:100%;
+        height:450px;
+        position: absolute;
+        top:270px
+}
+.weixin img{
+        width:330px;
+        height:450px
+}
+.weixin span{
+    width:280px;
+    color:#fe6150;
+}
 .heade{
     width:100%;
     height:180px;

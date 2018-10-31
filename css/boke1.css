@@ -6,6 +6,20 @@
         padding:0px;
     }
     html{height:100%}
+.weixin{
+        width:100%;
+        height:450px;
+        position: absolute;
+        top:270px
+}
+.weixin img{
+        width:365px;
+        height:450px
+}
+.weixin span{
+    width:365px;
+    color:#fe6150;
+}
 .heade{
     width:100%;
     height:180px;
@@ -416,12 +430,13 @@ a:hover{
 #main .center .right .right_top .right_top_ul li{
     width:110px;
     height:75px;
-    margin-bottom:2px;
-    margin-left:1px;
-    color:#fff;
+    margin-bottom:5px;
     text-align:center;
     line-height:75px;
     cursor:pointer;
+}
+.right_top_ul li a{
+    color:#fff;
 }
 #main .center .right .right_top .right_top_ul li:nth-child(1){
     background:#71a532;
