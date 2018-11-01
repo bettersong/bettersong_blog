@@ -47,7 +47,6 @@ a:hover{
     height:102px;
     background:url("../images/header.jpg") no-repeat center/100% 100%;
     margin-top:0px;
-
 }
 .head{
     margin: 0 auto;
@@ -668,7 +667,7 @@ a:hover{
     height:50px;
     background:#ddd;
     position:absolute;
-    margin-top: 4147px;
+    margin-top: 4190px;
 }
 .foot span{
     display:block;
