@@ -664,8 +664,8 @@ a:hover{
 }
 .foot{
     width: 100%;
-    height:50px;
-    background:#ddd;
+    height:70px;
+    background:url("../images/footer.png")no-repeat center/100% 100%;
     position:absolute;
     margin-top: 4190px;
 }
@@ -675,5 +675,11 @@ a:hover{
     line-height:50px;
     text-align:center;
 }
-
+.fo_img img{
+    position: absolute;
+    width: 110px;
+    height: 60px;
+    left: 20px;
+    top: 10px;
+}
 }
